@@ -1,0 +1,15 @@
+{
+  "name": "ward-watcher",
+  "version": "1.0.0",
+  "description": "Example bed state application using a FHIR Appliance",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/synanetics/fhir-appliance-example-applications/ward-watcher/"
+  },
+  "author": "",
+  "license": "ISC"
+}
