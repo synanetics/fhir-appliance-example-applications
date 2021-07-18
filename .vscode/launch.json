@@ -1,0 +1,40 @@
+{
+  // Use IntelliSense to learn about possible Node.js debug attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  //link front-end, configure nunjucks view engine
+
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "debug-ward-watcher",
+      "program": "${workspaceRoot}/ward-watcher/node_modules/moleculer/bin/moleculer-runner.js",
+      "cwd": "${workspaceRoot}/ward-watcher",
+      "args": [
+        "--envfile",
+        "${workspaceRoot}/ward-watcher/launch/app/debug.env",
+        "--hot",
+        "**/*.service.js"
+      ],
+      "preLaunchTask": "ww:debug:up",
+      "postDebugTask": "ww:debug:down"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "debug-ward-watcher-backend",
+      "program": "${workspaceRoot}/ward-watcher/node_modules/moleculer/bin/moleculer-runner.js",
+      "cwd": "${workspaceRoot}/ward-watcher",
+      "args": [
+        "--envfile",
+        "${workspaceRoot}/ward-watcher/launch/app/debug.env",
+        "--hot",
+        "**/*.service.js"
+      ],
+      "preLaunchTask": "ww:backend:build",
+      "postDebugTask": "ww:backend:down"
+    }
+  ]
+}

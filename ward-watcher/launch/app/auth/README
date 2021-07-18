@@ -1,0 +1,10 @@
+This folder contains the corresponding "private" keys and certs which would normally be held securely and used for:
+ 
+ - JWT token signing
+ - Mutal TLS Client authentication
+ 
+The certificates and keys are provided here so that the application can make JWT and mutal TLS authenticated requests to the FHIR Appliance:
+
+** Evidently these keys are self-signed by a "fake" CA and are not secret or secure **
+** The keys are for internal developer demo purposes only and should not be used with an externally connected system **
+** You may prefer to replace all of the keys and certificates in this "auth" area with your own **

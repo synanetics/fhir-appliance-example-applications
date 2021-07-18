@@ -1,0 +1,77 @@
+version: "3.2"
+
+services:
+    # fhir db
+    fhir-appliance-db:
+        build:
+            context: ./fhir/db
+            dockerfile: Dockerfile
+        container_name: fhir-appliance-db
+        hostname: localhost
+        environment:
+            - ACCEPT_EULA="Y"
+            - SA_PASSWORD=5tMunG050nFh1R
+            - MSSQL_PID=Developer #Other options available: https://hub.docker.com/_/microsoft-mssql-server
+        ports:
+            - 1433:1433
+        networks:
+            - ward_watcher
+
+    # fhir appliance
+    fhir-appliance:
+        image: synaneticsltd/synfhir-store:linux-beta-v3.1.1
+        restart: always
+        container_name: fhir-appliance
+        environment:
+            - METRICSENABLE=false
+            - NAMESPACE=fhir-appliance
+            - NODE_ENV=development
+            - SERVICEDIR=services
+            - SERVICES=**/*.service.js
+        env_file:
+            - ./fhir/.env
+        ports:
+            - 3443:443
+            - 3843:8443
+        depends_on:
+            - fhir-appliance-db
+        volumes:
+            - ./fhir/ssl:/app/ssl
+            - ./fhir/jwt:/app/jwt
+        networks:
+            - ward_watcher
+
+    app-session:
+        image: redis:alpine
+        container_name: app-session
+        ports:
+            - 6379:6379
+        networks:
+            - ward_watcher
+
+    app-database:
+        build:
+            context: ./app/db
+            dockerfile: Dockerfile
+        container_name: app-database
+        hostname: localhost
+        environment:
+            - ACCEPT_EULA="Y"
+            - SA_PASSWORD=5tMunG050nFh1R
+            - MSSQL_PID=Developer
+        ports:
+            - 1434:1433
+        networks:
+            - ward_watcher
+
+    #app:
+    #mount auth key to ./app/auth
+
+    # mirth connect
+    # mirth connect db
+
+networks:
+    ward_watcher:
+
+volumes:
+    data:

@@ -1,0 +1,37 @@
+{
+  "psi-header.config": {
+    "forceToTop": true,
+    "blankLinesAfter": 1,
+    "license": "MIT",
+    "company": "Synanetics Ltd"
+  },
+  "psi-header.lang-config": [
+    {
+      "language": "*",
+      "lineLength": 160
+    }
+  ],
+  "psi-header.changes-tracking": {
+    "isActive": true,
+    "include": ["javascript"],
+    "autoHeader": "manualSave",
+    "enforceHeader": true
+  },
+  "psi-header.templates": [
+    {
+      "language": "javascript",
+      "template": [
+        "File: <<filerelativepath>>",
+        "Project: <<projectname>>",
+        "Created Date: <<filecreated('dddd MMMM Do YYYY')>>",
+        "Author: <<author>>",
+        "-----",
+        "Last Modified: <<dateformat('dddd MMMM Do YYYY h:mm:ss a')>>",
+        "Modified By: <<author>>",
+        "-----",
+        "Copyright (c) <<year>> <<company>>",
+        "<<licensename>>"
+      ]
+    }
+  ]
+}

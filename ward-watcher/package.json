@@ -1,15 +1,94 @@
 {
-  "name": "ward-watcher",
-  "version": "1.0.0",
-  "description": "Example bed state application using a FHIR Appliance",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/synanetics/fhir-appliance-example-applications/ward-watcher/"
-  },
-  "author": "",
-  "license": "ISC"
+    "name": "ward-watcher",
+    "version": "1.0.0",
+    "description": "Example FHIR Appliance bed state application for a fictional hospital, St. Mungo's",
+    "main": "index.js",
+    "scripts": {
+        "ww:debug:up": "npm-run-all ww:backend:build clean:frontend build:frontend",
+        "ww:debug:down": "npm-run-all ww:backend:down clean:frontend",
+        "build:frontend": "gulp build",
+        "clean:frontend": "gulp clean",
+        "ww:backend:build": "cd ./launch && docker-compose -p fhir-appliance-examples up --build -d",
+        "ww:backend:up": "cd ./launch && docker-compose -p fhir-appliance-examples up -d",
+        "ww:backend:down": "cd ./launch && docker-compose -p fhir-appliance-examples down -v --remove-orphans"
+    },
+    "keywords": [
+        "fhir",
+        "fhir appliance",
+        "fhir server",
+        "fhir up",
+        "fhir appliance ward watcher",
+        "fhir ward watcher",
+        "ward watcher",
+        "synanetics fhir",
+        "synanetics",
+        "microservices",
+        "moleculer"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/synanetics/fhir-appliance-example-applications/ward-watcher/"
+    },
+    "author": "Synanetics Ltd",
+    "license": "MIT",
+    "devDependencies": {
+        "fakerator": "^0.3.3",
+        "jest": "^27.0.6",
+        "moleculer-repl": "^0.6.4"
+    },
+    "dependencies": {
+        "@babel/core": "^7.14.5",
+        "@babel/preset-env": "^7.14.5",
+        "bcrypt": "^5.0.1",
+        "connect-redis": "^6.0.0",
+        "crypto": "^1.0.1",
+        "dotenv": "^10.0.0",
+        "express-session": "^1.17.2",
+        "fastest-validator": "^1.11.0",
+        "got": "^11.8.2",
+        "gulp": "^4.0.2",
+        "gulp-babel": "^8.0.0",
+        "gulp-clean": "^0.4.0",
+        "gulp-clean-css": "^4.3.0",
+        "gulp-rename": "^2.0.0",
+        "gulp-sass": "^4.1.0",
+        "helmet": "^4.6.0",
+        "jsonwebtoken": "^8.5.1",
+        "keypather": "^3.1.0",
+        "lodash": "^4.17.21",
+        "moleculer": "^0.14.13",
+        "moleculer-db": "^0.8.4",
+        "moleculer-db-adapter-sequelize": "^0.2.11",
+        "moleculer-web": "^0.10.0-beta3",
+        "moment-timezone": "^0.5.33",
+        "nhsuk-frontend": "^5.1.0",
+        "node-forge": "^0.10.0",
+        "npm-run-all": "^4.1.5",
+        "nunjucks": "^3.2.3",
+        "redis": "^3.1.2",
+        "sequelize": "^6.6.2",
+        "tedious": "^11.0.9",
+        "uniqid": "^5.3.0",
+        "uuid": "^8.3.2"
+    },
+    "engines": {
+        "node": ">= 10.x.x"
+    },
+    "prettier": {
+        "tabWidth": 4,
+        "printWidth": 160,
+        "overrides": [
+            {
+                "files": [
+                    "*.html"
+                ],
+                "options": {
+                    "printWidth": 500
+                }
+            }
+        ]
+    },
+    "publishConfig": {
+        "access": "restricted"
+    }
 }

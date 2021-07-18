@@ -1,0 +1,21 @@
+{% extends 'layout.njk' %}
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}FHIR Up - FHIR Server Management Console{% endblock %}
+<!--Header-->
+{% block header %}
+  {{ header({
+    "showNav": "false",
+    "showSearch": "false",
+    "homeHref":"/ward-watcher/",
+    "organisation": {
+      "name": "St. Mungos NHS Foundation Trust",
+      "descriptor": "Ward Watcher"
+    }
+  })
+}}
+{% endblock %}
+<!-- Custom/Page specific javaScript files -->
+{% block pageScripts %}
+  <script src="/appliance/jquery-3.6.0.min.js"></script>
+  <script src="/appliance/app.js"></script>
+{% endblock %}

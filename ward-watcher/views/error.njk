@@ -1,0 +1,23 @@
+<!-- Extends the layout from content-page -->
+{% extends 'content-page.njk' %}
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}FHIR Up - Oh no!{% endblock %}
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+{% endblock %}
+<!-- Page content goes inside the content block -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+            <h2 class="nhsuk-error-summary__title" id="error-summary-title">An error occured</h2>
+            <div class="nhsuk-error-summary__body">
+                <p>The following error occured whilst processing your request:</p>
+                <ul class="nhsuk-list nhsuk-error-summary__list">
+                    <li><span class="nhsuk-error-message">{{ error.message }}</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

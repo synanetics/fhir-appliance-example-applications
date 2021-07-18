@@ -1,0 +1,38 @@
+{<!-- Extends the layout from content-page -->
+{% extends 'content-page.njk' %}
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}St. Mungos Ward Watcher - Welcome{% endblock %}
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+{% endblock %}
+<!-- Page content goes inside the content block -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class-"nhsuk-grid-column-full">
+        <nav class="patient-info">
+            <ul role="navigation">
+                <li><span style=""><strong>NHS Number: </strong> 3452 1007 6779</span></li>
+                <li><strong>Patient: </strong><a href="Patient name">EVANS, David (Mr)</a></li>
+                <li><strong>Gender: </strong> Male</li>
+                <li>30 years (4 June 1988)</li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <h2>
+            Welcome {{ user.name.given}} {{ user.name.family }}
+            <span class="nhsuk-caption-xl nhsuk-caption--bottom">Ward Watcher</span>
+        </h2>
+    </div>
+    <div class="nhsuk-grid-column-full">
+        <hr class="nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-5">
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+                <p class="nhsuk-u-margin-bottom-0">Visit the <a href="https:///">FHIR Appliance</a> website for documentation, guidance and examples.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

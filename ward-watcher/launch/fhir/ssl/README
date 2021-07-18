@@ -1,0 +1,7 @@
+This folder contains a "private" key necessary to configure a HTTPS server. This file would normally be held securely.
+ 
+The key is provided here so that the FHIR Appliance can run HTTPS endpoints:
+
+** Evidently these keys are self-signed by a "fake" CA and are not secret or secure **
+** The private key and server certificate should only ever be used for development/demonstration purposes only **
+** You may prefer to replace all of the keys and certificates with your own self-signed set **

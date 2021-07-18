@@ -1,0 +1,21 @@
+{% extends 'layout.njk' %}
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}{{ title }}{% endblock %}
+<!--Header-->
+{% block header %}
+ {{ header({
+    "transactionalService": {
+      "name": service.name,
+      "longName":"true",
+      "href": service.href
+    },
+    "homeHref":"/appliance",
+    "showNav": "false",
+    "showSearch": "false"
+}) }}
+{% endblock %}
+<!-- Custom/Page specific javaScript files -->
+{% block pageScripts %}
+  <script src="/appliance/jquery-3.6.0.min.js"></script>
+  <script src="/appliance/app.js"></script>
+{% endblock %}

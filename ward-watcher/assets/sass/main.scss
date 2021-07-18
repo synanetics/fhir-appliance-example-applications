@@ -1,0 +1,34 @@
+// Import FHIR frontend library
+@import "node_modules/nhsuk-frontend/packages/nhsuk";
+
+nav.patient-info {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 25px;
+    justify-content: space-between;
+}
+
+nav.patient-info ul {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    justify-content: space-between;
+}
+
+nav.patient-info li {
+    padding: 8px;
+    margin-bottom: 0;
+    margin-right: 32px;
+    font-size: 16px;
+}
+
+nav.patient-info ul li:first-child {
+    background-color: #425563;
+    color: $color_nhsuk-grey-5;
+}
+
+nav.patient-info a {
+    padding: 0;
+}

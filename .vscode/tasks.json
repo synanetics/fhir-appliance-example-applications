@@ -1,0 +1,35 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "label": "ww:debug:up",
+      "script": "ww:debug:up",
+      "path": "/ward-watcher/"
+    },
+    {
+      "type": "npm",
+      "label": "ww:debug:down",
+      "script": "ww:debug:down",
+      "path": "/ward-watcher/"
+    },
+    {
+      "type": "npm",
+      "label": "ww:backend:build",
+      "script": "ww:backend:build",
+      "path": "/ward-watcher/"
+    },
+    {
+      "type": "npm",
+      "label": "ww:backend:up",
+      "script": "ww:backend:up",
+      "path": "/ward-watcher/"
+    },
+    {
+      "type": "npm",
+      "label": "ww:backend:down",
+      "script": "ww:backend:down",
+      "path": "/ward-watcher/"
+    }
+  ]
+}
