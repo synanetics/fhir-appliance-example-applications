@@ -74,4 +74,7 @@ certs/
 public/
 
 # mirth data
-data/appdata
+*.properties
+*.jks
+*.id
+launch/mirth/data/appdata
