@@ -1,0 +1,1345 @@
+<channel version="3.11.0">
+  <id>1d7ec352-7bff-40f7-9c0e-35d27b4448ee</id>
+  <nextMetaDataId>7</nextMetaDataId>
+  <name>ADT to FHIR</name>
+  <description></description>
+  <revision>1</revision>
+  <sourceConnector version="3.11.0">
+    <metaDataId>0</metaDataId>
+    <name>sourceConnector</name>
+    <properties class="com.mirth.connect.connectors.vm.VmReceiverProperties" version="3.11.0">
+      <pluginProperties/>
+      <sourceConnectorProperties version="3.11.0">
+        <responseVariable>None</responseVariable>
+        <respondAfterProcessing>true</respondAfterProcessing>
+        <processBatch>false</processBatch>
+        <firstResponse>false</firstResponse>
+        <processingThreads>1</processingThreads>
+        <resourceIds class="linked-hash-map">
+          <entry>
+            <string>Default Resource</string>
+            <string>[Default Resource]</string>
+          </entry>
+        </resourceIds>
+        <queueBufferSize>1000</queueBufferSize>
+      </sourceConnectorProperties>
+    </properties>
+    <transformer version="3.11.0">
+      <elements/>
+      <inboundTemplate encoding="base64"></inboundTemplate>
+      <outboundTemplate encoding="base64"></outboundTemplate>
+      <inboundDataType>HL7V2</inboundDataType>
+      <outboundDataType>HL7V2</outboundDataType>
+      <inboundProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DataTypeProperties" version="3.11.0">
+        <serializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2SerializationProperties" version="3.11.0">
+          <handleRepetitions>true</handleRepetitions>
+          <handleSubcomponents>true</handleSubcomponents>
+          <useStrictParser>false</useStrictParser>
+          <useStrictValidation>false</useStrictValidation>
+          <stripNamespaces>true</stripNamespaces>
+          <segmentDelimiter>\r</segmentDelimiter>
+          <convertLineBreaks>true</convertLineBreaks>
+        </serializationProperties>
+        <deserializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DeserializationProperties" version="3.11.0">
+          <useStrictParser>false</useStrictParser>
+          <useStrictValidation>false</useStrictValidation>
+          <segmentDelimiter>\r</segmentDelimiter>
+        </deserializationProperties>
+        <batchProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2BatchProperties" version="3.11.0">
+          <splitType>MSH_Segment</splitType>
+          <batchScript></batchScript>
+        </batchProperties>
+        <responseGenerationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseGenerationProperties" version="3.11.0">
+          <segmentDelimiter>\r</segmentDelimiter>
+          <successfulACKCode>AA</successfulACKCode>
+          <successfulACKMessage></successfulACKMessage>
+          <errorACKCode>AE</errorACKCode>
+          <errorACKMessage>An Error Occurred Processing Message.</errorACKMessage>
+          <rejectedACKCode>AR</rejectedACKCode>
+          <rejectedACKMessage>Message Rejected.</rejectedACKMessage>
+          <msh15ACKAccept>false</msh15ACKAccept>
+          <dateFormat>yyyyMMddHHmmss.SSS</dateFormat>
+        </responseGenerationProperties>
+        <responseValidationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseValidationProperties" version="3.11.0">
+          <successfulACKCode>AA,CA</successfulACKCode>
+          <errorACKCode>AE,CE</errorACKCode>
+          <rejectedACKCode>AR,CR</rejectedACKCode>
+          <validateMessageControlId>true</validateMessageControlId>
+          <originalMessageControlId>Destination_Encoded</originalMessageControlId>
+          <originalIdMapVariable></originalIdMapVariable>
+        </responseValidationProperties>
+      </inboundProperties>
+      <outboundProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DataTypeProperties" version="3.11.0">
+        <serializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2SerializationProperties" version="3.11.0">
+          <handleRepetitions>true</handleRepetitions>
+          <handleSubcomponents>true</handleSubcomponents>
+          <useStrictParser>false</useStrictParser>
+          <useStrictValidation>false</useStrictValidation>
+          <stripNamespaces>true</stripNamespaces>
+          <segmentDelimiter>\r</segmentDelimiter>
+          <convertLineBreaks>true</convertLineBreaks>
+        </serializationProperties>
+        <deserializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DeserializationProperties" version="3.11.0">
+          <useStrictParser>false</useStrictParser>
+          <useStrictValidation>false</useStrictValidation>
+          <segmentDelimiter>\r</segmentDelimiter>
+        </deserializationProperties>
+        <batchProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2BatchProperties" version="3.11.0">
+          <splitType>MSH_Segment</splitType>
+          <batchScript></batchScript>
+        </batchProperties>
+        <responseGenerationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseGenerationProperties" version="3.11.0">
+          <segmentDelimiter>\r</segmentDelimiter>
+          <successfulACKCode>AA</successfulACKCode>
+          <successfulACKMessage></successfulACKMessage>
+          <errorACKCode>AE</errorACKCode>
+          <errorACKMessage>An Error Occurred Processing Message.</errorACKMessage>
+          <rejectedACKCode>AR</rejectedACKCode>
+          <rejectedACKMessage>Message Rejected.</rejectedACKMessage>
+          <msh15ACKAccept>false</msh15ACKAccept>
+          <dateFormat>yyyyMMddHHmmss.SSS</dateFormat>
+        </responseGenerationProperties>
+        <responseValidationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseValidationProperties" version="3.11.0">
+          <successfulACKCode>AA,CA</successfulACKCode>
+          <errorACKCode>AE,CE</errorACKCode>
+          <rejectedACKCode>AR,CR</rejectedACKCode>
+          <validateMessageControlId>true</validateMessageControlId>
+          <originalMessageControlId>Destination_Encoded</originalMessageControlId>
+          <originalIdMapVariable></originalIdMapVariable>
+        </responseValidationProperties>
+      </outboundProperties>
+    </transformer>
+    <filter version="3.11.0">
+      <elements/>
+    </filter>
+    <transportName>Channel Reader</transportName>
+    <mode>SOURCE</mode>
+    <enabled>true</enabled>
+    <waitForPrevious>true</waitForPrevious>
+  </sourceConnector>
+  <destinationConnectors>
+    <connector version="3.11.0">
+      <metaDataId>5</metaDataId>
+      <name>UPSERT Patient</name>
+      <properties class="com.mirth.connect.connectors.http.HttpDispatcherProperties" version="3.11.0">
+        <pluginProperties/>
+        <destinationConnectorProperties version="3.11.0">
+          <queueEnabled>false</queueEnabled>
+          <sendFirst>false</sendFirst>
+          <retryIntervalMillis>10000</retryIntervalMillis>
+          <regenerateTemplate>false</regenerateTemplate>
+          <retryCount>0</retryCount>
+          <rotate>false</rotate>
+          <includeFilterTransformer>false</includeFilterTransformer>
+          <threadCount>1</threadCount>
+          <threadAssignmentVariable></threadAssignmentVariable>
+          <validateResponse>false</validateResponse>
+          <resourceIds class="linked-hash-map">
+            <entry>
+              <string>Default Resource</string>
+              <string>[Default Resource]</string>
+            </entry>
+          </resourceIds>
+          <queueBufferSize>1000</queueBufferSize>
+          <reattachAttachments>true</reattachAttachments>
+        </destinationConnectorProperties>
+        <host>http://host.docker.internal:3880/fhir/stu3/Patient/${patientResourceId}</host>
+        <useProxyServer>false</useProxyServer>
+        <proxyAddress></proxyAddress>
+        <proxyPort></proxyPort>
+        <method>put</method>
+        <headers class="linked-hash-map">
+          <entry>
+            <string>api-key</string>
+            <list>
+              <string>900a1cae-7b54-43da-9ef9-94087d6c1b81</string>
+            </list>
+          </entry>
+        </headers>
+        <parameters class="linked-hash-map"/>
+        <useHeadersVariable>false</useHeadersVariable>
+        <headersVariable></headersVariable>
+        <useParametersVariable>false</useParametersVariable>
+        <parametersVariable></parametersVariable>
+        <responseXmlBody>false</responseXmlBody>
+        <responseParseMultipart>true</responseParseMultipart>
+        <responseIncludeMetadata>false</responseIncludeMetadata>
+        <responseBinaryMimeTypes></responseBinaryMimeTypes>
+        <responseBinaryMimeTypesRegex>false</responseBinaryMimeTypesRegex>
+        <multipart>false</multipart>
+        <useAuthentication>false</useAuthentication>
+        <authenticationType>Basic</authenticationType>
+        <usePreemptiveAuthentication>false</usePreemptiveAuthentication>
+        <username></username>
+        <password></password>
+        <content>${message.encodedData}</content>
+        <contentType>application/fhir+json</contentType>
+        <dataTypeBinary>false</dataTypeBinary>
+        <charset>UTF-8</charset>
+        <socketTimeout>30000</socketTimeout>
+      </properties>
+      <transformer version="3.11.0">
+        <elements>
+          <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="3.11.0">
+            <name>identifier [0] - value (out) &lt;-- Patient identification - Patient ID - ID (PID.2.1) (in)</name>
+            <sequenceNumber>0</sequenceNumber>
+            <enabled>true</enabled>
+            <messageSegment>tmp[&apos;identifier&apos;][0][&apos;value&apos;]</messageSegment>
+            <mapping>msg[&apos;PID&apos;][&apos;PID.2&apos;][&apos;PID.2.1&apos;].toString()</mapping>
+            <defaultValue></defaultValue>
+            <replacements/>
+          </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
+          <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="3.11.0">
+            <name>identifier [1] - value (out) &lt;-- Patient identification - Patient Identifier List - ID (PID.3.1) (in)</name>
+            <sequenceNumber>1</sequenceNumber>
+            <enabled>true</enabled>
+            <messageSegment>tmp[&apos;identifier&apos;][1][&apos;value&apos;]</messageSegment>
+            <mapping>msg[&apos;PID&apos;][&apos;PID.3&apos;][&apos;PID.3.1&apos;].toString()</mapping>
+            <defaultValue></defaultValue>
+            <replacements/>
+          </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
+          <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="3.11.0">
+            <name>name [0] - family (out) &lt;-- Patient identification - Patient Name - Family Name (PID.5.1) (in)</name>
+            <sequenceNumber>2</sequenceNumber>
+            <enabled>true</enabled>
+            <messageSegment>tmp[&apos;name&apos;][0][&apos;family&apos;]</messageSegment>
+            <mapping>msg[&apos;PID&apos;][&apos;PID.5&apos;][&apos;PID.5.1&apos;].toString()</mapping>
+            <defaultValue></defaultValue>
+            <replacements/>
+          </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
+          <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="3.11.0">
+            <name>name [0] - given [0] -  (out) &lt;-- Patient identification - Patient Name - Given Name (PID.5.2) (in)</name>
+            <sequenceNumber>3</sequenceNumber>
+            <enabled>true</enabled>
+            <messageSegment>tmp[&apos;name&apos;][0][&apos;given&apos;][0]</messageSegment>
+            <mapping>msg[&apos;PID&apos;][&apos;PID.5&apos;][&apos;PID.5.2&apos;].toString()</mapping>
+            <defaultValue></defaultValue>
+            <replacements/>
+          </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
+          <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="3.11.0">
+            <name>name [0] - prefix [0] -  (out) &lt;-- Patient identification - Patient Name - Prefix (PID.5.5) (in)</name>
+            <sequenceNumber>4</sequenceNumber>
+            <enabled>true</enabled>
+            <messageSegment>tmp[&apos;name&apos;][0][&apos;prefix&apos;][0]</messageSegment>
+            <mapping>msg[&apos;PID&apos;][&apos;PID.5&apos;][&apos;PID.5.5&apos;].toString()</mapping>
+            <defaultValue></defaultValue>
+            <replacements/>
+          </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
+          <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="3.11.0">
+            <name>gender</name>
+            <sequenceNumber>5</sequenceNumber>
+            <enabled>true</enabled>
+            <messageSegment>tmp[&apos;gender&apos;]</messageSegment>
+            <mapping>msg[&apos;PID&apos;][&apos;PID.8&apos;][&apos;PID.8.1&apos;].toString()</mapping>
+            <defaultValue></defaultValue>
+            <replacements>
+              <org.apache.commons.lang3.tuple.ImmutablePair>
+                <left class="string">&quot;1&quot;</left>
+                <right class="string">&quot;male&quot;</right>
+              </org.apache.commons.lang3.tuple.ImmutablePair>
+              <org.apache.commons.lang3.tuple.ImmutablePair>
+                <left class="string">&quot;2&quot;</left>
+                <right class="string">&quot;female&quot;</right>
+              </org.apache.commons.lang3.tuple.ImmutablePair>
+              <org.apache.commons.lang3.tuple.ImmutablePair>
+                <left class="string">&quot;99&quot;</left>
+                <right class="string">&quot;unknown&quot;</right>
+              </org.apache.commons.lang3.tuple.ImmutablePair>
+            </replacements>
+          </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
+          <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="3.11.0">
+            <name>birthDate (out) &lt;-- Patient identification - Date/Time of Birth - Time of An Event (PID.7.1) (in)</name>
+            <sequenceNumber>6</sequenceNumber>
+            <enabled>true</enabled>
+            <messageSegment>tmp[&apos;birthDate&apos;]</messageSegment>
+            <mapping>convertToFhirDate(msg[&apos;PID&apos;][&apos;PID.7&apos;][&apos;PID.7.1&apos;].toString())</mapping>
+            <defaultValue></defaultValue>
+            <replacements/>
+          </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
+          <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="3.11.0">
+            <name>address [0] - line [0] -  (out) &lt;-- Patient identification - Patient Address - Street Address (SAD) (PID.11.1) (in)</name>
+            <sequenceNumber>7</sequenceNumber>
+            <enabled>true</enabled>
+            <messageSegment>tmp[&apos;address&apos;][0][&apos;line&apos;][0]</messageSegment>
+            <mapping>msg[&apos;PID&apos;][&apos;PID.11&apos;][&apos;PID.11.1&apos;].toString()</mapping>
+            <defaultValue></defaultValue>
+            <replacements/>
+          </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
+          <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="3.11.0">
+            <name>address [0] - line [1] -  (out) &lt;-- Patient identification - Patient Address - Other Designation (PID.11.2) (in)</name>
+            <sequenceNumber>8</sequenceNumber>
+            <enabled>true</enabled>
+            <messageSegment>tmp[&apos;address&apos;][0][&apos;line&apos;][1]</messageSegment>
+            <mapping>msg[&apos;PID&apos;][&apos;PID.11&apos;][&apos;PID.11.2&apos;].toString()</mapping>
+            <defaultValue></defaultValue>
+            <replacements/>
+          </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
+          <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="3.11.0">
+            <name>address [0] - city (out) &lt;-- Patient identification - Patient Address - City (PID.11.3) (in)</name>
+            <sequenceNumber>9</sequenceNumber>
+            <enabled>true</enabled>
+            <messageSegment>tmp[&apos;address&apos;][0][&apos;city&apos;]</messageSegment>
+            <mapping>msg[&apos;PID&apos;][&apos;PID.11&apos;][&apos;PID.11.3&apos;].toString()</mapping>
+            <defaultValue></defaultValue>
+            <replacements/>
+          </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
+          <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="3.11.0">
+            <name>address [0] - district (out) &lt;-- Patient identification - Patient Address - State or Province (PID.11.4) (in)</name>
+            <sequenceNumber>10</sequenceNumber>
+            <enabled>true</enabled>
+            <messageSegment>tmp[&apos;address&apos;][0][&apos;district&apos;]</messageSegment>
+            <mapping>msg[&apos;PID&apos;][&apos;PID.11&apos;][&apos;PID.11.4&apos;].toString()</mapping>
+            <defaultValue></defaultValue>
+            <replacements/>
+          </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
+          <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="3.11.0">
+            <name>address [0] - postalCode (out) &lt;-- Patient identification - Patient Address - Zip or Postal Code (PID.11.5) (in)</name>
+            <sequenceNumber>11</sequenceNumber>
+            <enabled>true</enabled>
+            <messageSegment>tmp[&apos;address&apos;][0][&apos;postalCode&apos;]</messageSegment>
+            <mapping>msg[&apos;PID&apos;][&apos;PID.11&apos;][&apos;PID.11.5&apos;].toString()</mapping>
+            <defaultValue></defaultValue>
+            <replacements/>
+          </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
+          <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.11.0">
+            <name>set patient general practice reference</name>
+            <sequenceNumber>12</sequenceNumber>
+            <enabled>true</enabled>
+            <script>//Extract organization id from map given ods code
+var odsCode = msg[&apos;PD1&apos;][&apos;PD1.3&apos;][&apos;PD1.3.2&apos;].toString()
+tmp[&apos;generalPractitioner&apos;][0][&apos;identifier&apos;][&apos;value&apos;] = odsCode;
+tmp[&apos;generalPractitioner&apos;][0][&apos;display&apos;] = msg[&apos;PD1&apos;][&apos;PD1.4&apos;][&apos;PD1.4.2&apos;].toString();
+var resourceId = globalMap.get(odsCode);
+tmp[&apos;generalPractitioner&apos;][0][&apos;reference&apos;] = &quot;Organization/&quot; + resourceId;</script>
+          </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
+          <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.11.0">
+            <name>set managing organization reference</name>
+            <sequenceNumber>13</sequenceNumber>
+            <enabled>true</enabled>
+            <script>//Extract organization id from map given ods code
+var odsCode = msg[&apos;PD1&apos;][&apos;PD1.3&apos;][&apos;PD1.3.2&apos;].toString()
+tmp[&apos;generalPractitioner&apos;][0][&apos;identifier&apos;][&apos;value&apos;] = odsCode;
+tmp[&apos;generalPractitioner&apos;][0][&apos;display&apos;] = msg[&apos;PD1&apos;][&apos;PD1.4&apos;][&apos;PD1.4.2&apos;].toString();
+var resourceId = globalMap.get(&quot;ZZ1&quot;);
+tmp[&apos;managingOrganization&apos;][&apos;reference&apos;] = &quot;Organization/&quot; + resourceId;
+tmp[&apos;managingOrganization&apos;][&apos;display&apos;] = &quot;St. Mungos NHS Foundation Trust&quot;;</script>
+          </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
+          <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.11.0">
+            <name>set patient resource id</name>
+            <sequenceNumber>14</sequenceNumber>
+            <enabled>true</enabled>
+            <script>//If an id map entry exists for this nhs number then use it, else create one
+var nhsNumber = msg[&apos;PID&apos;][&apos;PID.2&apos;][&apos;PID.2.1&apos;].toString();
+var patientResourceId = globalMap.get(nhsNumber);
+if(!patientResourceId)
+{
+	patientResourceId = UUIDGenerator.getUUID();
+	globalMap.put(nhsNumber, patientResourceId);
+}
+//Update reference data for this pt
+globalMap.put(patientResourceId, msg[&apos;PID&apos;][&apos;PID.5&apos;][&apos;PID.5.2&apos;].toString() + &quot; &quot; + msg[&apos;PID&apos;][&apos;PID.5&apos;][&apos;PID.5.1&apos;].toString());
+//Add id to channel map
+channelMap.put(&apos;patientResourceId&apos;,patientResourceId);
+//Set id property on outbound FHIR resource...
+tmp[&apos;id&apos;] = patientResourceId;</script>
+          </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
+        </elements>
+        <inboundTemplate encoding="base64">TVNIfF5+XCZ8VFJBS0NBUkV8WloxfFJPVVRFUnxST1VURVJ8MjAyMTA3MTExNTU1MDB8fEFEVF5BMDF8Nno4MTl8UHwyLjR8fHxBTHxORXx8fEVOXmVuZ2xpc2heSVNPNjM5fApQSUR8MXw5NDQ5MzA1NTI4Xl5eTkhTXk5IU3xBMTIzNDUyMV5eXlJBNF5IUk58fFRPVEhJTExeQUxMSVNPTl5eXk1pc3NeXkx8fDE5OTYwMzExfDJ8fEVeV2hpdGUgYW5kIEJsYWNrIEFmcmljYW58WWVvdmlsIERpc3RyaWN0IEhvc3BpdGFsXktpbmdzdG9uIFJvYWReWWVvdmlsXlNvbWVyc2V0XkJBMjEgNEFUXl5QXl5eXnx8fHx8fEsxXkFnbm9zdGljfHx8fHx8fHx8fHx8fHx8fDIwMTYwMzA4MTU1NDUyfHx8fHwKUEQxfHx8WTA2NjAxXlkwNjYwMV58WTA2NjAxXk1hbHRvbiBHUCBQcmFjdGljZV5eXl5eXl5UUkFLQ0FSRV5eXl5ETnx8fHx8fHx8fHx8fHx8fHx8ClBWMXwxfEl8RU1FUl5eRU1FUi0yXlpaMTAxXl5efHx8fEc4OTk5OTkyXkxhbm5pc3Rlcl5UeXJpb25eXl4xXl5eU01DXl5eXkROfHx8MTAwfHx8fDE5XlVzdWFsIHBsYWNlIG9mIHJlc2lkZW5jZXx8fHx8STAwMDAwMDAwMDF8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8MjAyMTA3MTExNTU1MDB8fHx8fHx8fApQVjJ8fHx8fHx8fHwyMDIxMDcxMTE1NTUwMHwwfHx8MTleVXN1YWwgcGxhY2Ugb2YgcmVzaWRlbmNlfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fA==</inboundTemplate>
+        <outboundTemplate encoding="base64">ewogICAgInJlc291cmNlVHlwZSI6ICJQYXRpZW50IiwKICAgICJtZXRhIjogewogICAgICAgICJwcm9maWxlIjogWwogICAgICAgICAgICAiaHR0cHM6Ly9maGlyLmhsNy5vcmcudWsvU1RVMy9TdHJ1Y3R1cmVEZWZpbml0aW9uL0NhcmVDb25uZWN0LVBhdGllbnQtMSIKICAgICAgICBdCiAgICB9LAogICAgImlkZW50aWZpZXIiOiBbCiAgICAgICAgewogICAgICAgICAgICAiZXh0ZW5zaW9uIjogWwogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICJ1cmwiOiAiaHR0cHM6Ly9maGlyLmhsNy5vcmcudWsvU1RVMy9TdHJ1Y3R1cmVEZWZpbml0aW9uL0V4dGVuc2lvbi1DYXJlQ29ubmVjdC1OSFNOdW1iZXJWZXJpZmljYXRpb25TdGF0dXMtMSIsCiAgICAgICAgICAgICAgICAgICAgInZhbHVlQ29kZWFibGVDb25jZXB0IjogewogICAgICAgICAgICAgICAgICAgICAgICAiY29kaW5nIjogWwogICAgICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICJzeXN0ZW0iOiAiaHR0cHM6Ly9maGlyLmhsNy5vcmcudWsvU1RVMy9Db2RlU3lzdGVtL0NhcmVDb25uZWN0LU5IU051bWJlclZlcmlmaWNhdGlvblN0YXR1cy0xIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAiY29kZSI6ICIwMSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgImRpc3BsYXkiOiAiTnVtYmVyIHByZXNlbnQgYW5kIHZlcmlmaWVkIgogICAgICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgICAgICBdCiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgfQogICAgICAgICAgICBdLAogICAgICAgICAgICAic3lzdGVtIjogImh0dHBzOi8vZmhpci5uaHMudWsvSWQvbmhzLW51bWJlciIsCiAgICAgICAgICAgICJ2YWx1ZSI6ICIiCiAgICAgICAgfSwKCQl7CgkJCSJzeXN0ZW0iOiJodHRwOi8veWNoci5maGlyLm5ocy51ay9JZC9ob3NwaXRhbC1yZWNvcmQtbnVtYmVyIiwKCQkJInZhbHVlIjoiIgoJCX0KICAgIF0sCiAgICAiYWN0aXZlIjogdHJ1ZSwKICAgICJuYW1lIjogWwogICAgICAgIHsKICAgICAgICAgICAgInVzZSI6ICJvZmZpY2lhbCIsCiAgICAgICAgICAgICJmYW1pbHkiOiAiIiwKICAgICAgICAgICAgImdpdmVuIjogWwogICAgICAgICAgICAgICAgIiIKICAgICAgICAgICAgXSwKICAgICAgICAgICAgInByZWZpeCI6IFsKICAgICAgICAgICAgICAgICIiCiAgICAgICAgICAgIF0KICAgICAgICB9CiAgICBdLAogICAgImdlbmRlciI6ICIiLAogICAgImJpcnRoRGF0ZSI6ICIiLAogICAgImFkZHJlc3MiOiBbCiAgICAgICAgewogICAgICAgICAgICAidXNlIjogImhvbWUiLAogICAgICAgICAgICAidHlwZSI6ICJwaHlzaWNhbCIsCgkJCSJsaW5lIjpbIiIsIiJdLAoJCQkiY2l0eSI6IiIsCgkJCSJkaXN0cmljdCI6IiIsCgkJCSJwb3N0YWxDb2RlIjoiIgogICAgICAgIH0KICAgIF0sCiAgICAibWFyaXRhbFN0YXR1cyI6IHsKICAgICAgICAiY29kaW5nIjogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAic3lzdGVtIjogImh0dHA6Ly9obDcub3JnL2ZoaXIvdjMvTWFyaXRhbFN0YXR1cyIsCiAgICAgICAgICAgICAgICAiY29kZSI6ICJTIiwKICAgICAgICAgICAgICAgICJkaXNwbGF5IjogIk5ldmVyIE1hcnJpZWQiCiAgICAgICAgICAgIH0KICAgICAgICBdCiAgICB9LAogICAgImdlbmVyYWxQcmFjdGl0aW9uZXIiOiBbCiAgICAgICAgewogICAgICAgICAgICAicmVmZXJlbmNlIjogIiIsCiAgICAgICAgICAgICJpZGVudGlmaWVyIjogewogICAgICAgICAgICAgICAgInVzZSI6ICJvZmZpY2lhbCIsCiAgICAgICAgICAgICAgICAic3lzdGVtIjogImh0dHBzOi8vZmhpci5uaHMudWsvSWQvb2RzLW9yZ2FuaXphdGlvbi1jb2RlIiwKICAgICAgICAgICAgICAgICJ2YWx1ZSI6ICIiCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgICJkaXNwbGF5IjogIiIKICAgICAgICB9CiAgICBdLAogICAgIm1hbmFnaW5nT3JnYW5pemF0aW9uIjogewogICAgICAgICJyZWZlcmVuY2UiOiAiT3JnYW5pemF0aW9uLyIsCiAgICAgICAgImRpc3BsYXkiOiAiIgogICAgfQp9</outboundTemplate>
+        <inboundDataType>HL7V2</inboundDataType>
+        <outboundDataType>FHIR</outboundDataType>
+        <inboundProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DataTypeProperties" version="3.11.0">
+          <serializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2SerializationProperties" version="3.11.0">
+            <handleRepetitions>true</handleRepetitions>
+            <handleSubcomponents>true</handleSubcomponents>
+            <useStrictParser>false</useStrictParser>
+            <useStrictValidation>false</useStrictValidation>
+            <stripNamespaces>true</stripNamespaces>
+            <segmentDelimiter>\r</segmentDelimiter>
+            <convertLineBreaks>true</convertLineBreaks>
+          </serializationProperties>
+          <deserializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DeserializationProperties" version="3.11.0">
+            <useStrictParser>false</useStrictParser>
+            <useStrictValidation>false</useStrictValidation>
+            <segmentDelimiter>\r</segmentDelimiter>
+          </deserializationProperties>
+          <batchProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2BatchProperties" version="3.11.0">
+            <splitType>MSH_Segment</splitType>
+            <batchScript></batchScript>
+          </batchProperties>
+          <responseGenerationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseGenerationProperties" version="3.11.0">
+            <segmentDelimiter>\r</segmentDelimiter>
+            <successfulACKCode>AA</successfulACKCode>
+            <successfulACKMessage></successfulACKMessage>
+            <errorACKCode>AE</errorACKCode>
+            <errorACKMessage>An Error Occurred Processing Message.</errorACKMessage>
+            <rejectedACKCode>AR</rejectedACKCode>
+            <rejectedACKMessage>Message Rejected.</rejectedACKMessage>
+            <msh15ACKAccept>false</msh15ACKAccept>
+            <dateFormat>yyyyMMddHHmmss.SSS</dateFormat>
+          </responseGenerationProperties>
+          <responseValidationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseValidationProperties" version="3.11.0">
+            <successfulACKCode>AA,CA</successfulACKCode>
+            <errorACKCode>AE,CE</errorACKCode>
+            <rejectedACKCode>AR,CR</rejectedACKCode>
+            <validateMessageControlId>true</validateMessageControlId>
+            <originalMessageControlId>Destination_Encoded</originalMessageControlId>
+            <originalIdMapVariable></originalIdMapVariable>
+          </responseValidationProperties>
+        </inboundProperties>
+        <outboundProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirDataTypeProperties" version="3.11.0">
+          <serializationProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirSerializationProperties" version="3.11.0">
+            <serializationType>JSON</serializationType>
+            <fhirVersion>R4</fhirVersion>
+          </serializationProperties>
+          <deserializationProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirDeserializationProperties" version="3.11.0">
+            <serializationType>JSON</serializationType>
+          </deserializationProperties>
+          <batchProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirBatchProperties" version="3.11.0">
+            <splitType>JavaScript</splitType>
+            <batchScript></batchScript>
+          </batchProperties>
+        </outboundProperties>
+      </transformer>
+      <responseTransformer version="3.11.0">
+        <elements/>
+        <inboundDataType>FHIR</inboundDataType>
+        <outboundDataType>FHIR</outboundDataType>
+        <inboundProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirDataTypeProperties" version="3.11.0">
+          <serializationProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirSerializationProperties" version="3.11.0">
+            <serializationType>JSON</serializationType>
+            <fhirVersion>R4</fhirVersion>
+          </serializationProperties>
+          <deserializationProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirDeserializationProperties" version="3.11.0">
+            <serializationType>JSON</serializationType>
+          </deserializationProperties>
+          <batchProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirBatchProperties" version="3.11.0">
+            <splitType>JavaScript</splitType>
+            <batchScript></batchScript>
+          </batchProperties>
+        </inboundProperties>
+        <outboundProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirDataTypeProperties" version="3.11.0">
+          <serializationProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirSerializationProperties" version="3.11.0">
+            <serializationType>JSON</serializationType>
+            <fhirVersion>R4</fhirVersion>
+          </serializationProperties>
+          <deserializationProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirDeserializationProperties" version="3.11.0">
+            <serializationType>JSON</serializationType>
+          </deserializationProperties>
+          <batchProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirBatchProperties" version="3.11.0">
+            <splitType>JavaScript</splitType>
+            <batchScript></batchScript>
+          </batchProperties>
+        </outboundProperties>
+      </responseTransformer>
+      <filter version="3.11.0">
+        <elements/>
+      </filter>
+      <transportName>HTTP Sender</transportName>
+      <mode>DESTINATION</mode>
+      <enabled>true</enabled>
+      <waitForPrevious>true</waitForPrevious>
+    </connector>
+    <connector version="3.11.0">
+      <metaDataId>6</metaDataId>
+      <name>UPSERT Encounter</name>
+      <properties class="com.mirth.connect.connectors.http.HttpDispatcherProperties" version="3.11.0">
+        <pluginProperties/>
+        <destinationConnectorProperties version="3.11.0">
+          <queueEnabled>false</queueEnabled>
+          <sendFirst>false</sendFirst>
+          <retryIntervalMillis>10000</retryIntervalMillis>
+          <regenerateTemplate>false</regenerateTemplate>
+          <retryCount>0</retryCount>
+          <rotate>false</rotate>
+          <includeFilterTransformer>false</includeFilterTransformer>
+          <threadCount>1</threadCount>
+          <threadAssignmentVariable></threadAssignmentVariable>
+          <validateResponse>false</validateResponse>
+          <resourceIds class="linked-hash-map">
+            <entry>
+              <string>Default Resource</string>
+              <string>[Default Resource]</string>
+            </entry>
+          </resourceIds>
+          <queueBufferSize>1000</queueBufferSize>
+          <reattachAttachments>true</reattachAttachments>
+        </destinationConnectorProperties>
+        <host>http://host.docker.internal:3880/fhir/stu3/Encounter/${encounterResourceId}</host>
+        <useProxyServer>false</useProxyServer>
+        <proxyAddress></proxyAddress>
+        <proxyPort></proxyPort>
+        <method>put</method>
+        <headers class="linked-hash-map">
+          <entry>
+            <string>api-key</string>
+            <list>
+              <string>900a1cae-7b54-43da-9ef9-94087d6c1b81</string>
+            </list>
+          </entry>
+        </headers>
+        <parameters class="linked-hash-map"/>
+        <useHeadersVariable>false</useHeadersVariable>
+        <headersVariable></headersVariable>
+        <useParametersVariable>false</useParametersVariable>
+        <parametersVariable></parametersVariable>
+        <responseXmlBody>false</responseXmlBody>
+        <responseParseMultipart>true</responseParseMultipart>
+        <responseIncludeMetadata>false</responseIncludeMetadata>
+        <responseBinaryMimeTypes></responseBinaryMimeTypes>
+        <responseBinaryMimeTypesRegex>false</responseBinaryMimeTypesRegex>
+        <multipart>false</multipart>
+        <useAuthentication>false</useAuthentication>
+        <authenticationType>Basic</authenticationType>
+        <usePreemptiveAuthentication>false</usePreemptiveAuthentication>
+        <username></username>
+        <password></password>
+        <content>${message.encodedData}</content>
+        <contentType>application/fhir+json</contentType>
+        <dataTypeBinary>false</dataTypeBinary>
+        <charset>UTF-8</charset>
+        <socketTimeout>30000</socketTimeout>
+      </properties>
+      <transformer version="3.11.0">
+        <elements>
+          <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="3.11.0">
+            <name>identifier [0] - value (out) &lt;-- Patient visit - Visit Number - ID (PV1.19.1) (in)</name>
+            <sequenceNumber>0</sequenceNumber>
+            <enabled>true</enabled>
+            <messageSegment>tmp[&apos;identifier&apos;][0][&apos;value&apos;]</messageSegment>
+            <mapping>msg[&apos;PV1&apos;][&apos;PV1.19&apos;][&apos;PV1.19.1&apos;].toString()</mapping>
+            <defaultValue></defaultValue>
+            <replacements/>
+          </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
+          <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.11.0">
+            <name>set period start</name>
+            <sequenceNumber>1</sequenceNumber>
+            <enabled>true</enabled>
+            <script>var startDateTime = convertToFhirTimestamp(msg[&apos;PV1&apos;][&apos;PV1.44&apos;][&apos;PV1.44.1&apos;].toString());
+tmp[&apos;statusHistory&apos;][0][&apos;period&apos;][&apos;start&apos;] = startDateTime;
+tmp[&apos;period&apos;][&apos;start&apos;] = startDateTime;</script>
+          </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
+          <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.11.0">
+            <name>set encounter class</name>
+            <sequenceNumber>2</sequenceNumber>
+            <enabled>true</enabled>
+            <script>var encounterClass = globalMap.get(msg[&apos;PV1&apos;][&apos;PV1.2&apos;][&apos;PV1.2.1&apos;].toString());
+tmp[&apos;class&apos;][&apos;code&apos;] = encounterClass.code;
+tmp[&apos;class&apos;][&apos;display&apos;] = encounterClass.display;</script>
+          </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
+          <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.11.0">
+            <name>set specialty</name>
+            <sequenceNumber>3</sequenceNumber>
+            <enabled>true</enabled>
+            <script>var specialtyCode = msg[&apos;PV1&apos;][&apos;PV1.10&apos;][&apos;PV1.10.1&apos;].toString();
+tmp[&apos;type&apos;][0][&apos;coding&apos;][0][&apos;code&apos;] = specialtyCode;
+tmp[&apos;type&apos;][0][&apos;text&apos;] = globalMap.get(specialtyCode);</script>
+          </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
+          <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.11.0">
+            <name>set patient</name>
+            <sequenceNumber>4</sequenceNumber>
+            <enabled>true</enabled>
+            <script>var patientResourceId = channelMap.get(&quot;patientResourceId&quot;);
+tmp[&apos;subject&apos;][&apos;reference&apos;] = &quot;Patient/&quot; + patientResourceId;
+tmp[&apos;subject&apos;][&apos;display&apos;] = globalMap.get(patientResourceId);</script>
+          </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
+          <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.11.0">
+            <name>set participant</name>
+            <sequenceNumber>5</sequenceNumber>
+            <enabled>true</enabled>
+            <script>var practitionerResourceId = globalMap.get(msg[&apos;PV1&apos;][&apos;PV1.7&apos;][&apos;PV1.7.1&apos;].toString());
+tmp[&apos;participant&apos;][0][&apos;individual&apos;][&apos;reference&apos;] = &quot;Practitioner/&quot; + practitionerResourceId;
+tmp[&apos;participant&apos;][0][&apos;individual&apos;][&apos;display&apos;] = globalMap.get(practitionerResourceId);</script>
+          </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
+          <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="3.11.0">
+            <name>hospitalization - admitSource - coding [0] - code (out) &lt;-- Patient visit - Admit Source - Value (PV1.14.1) (in)</name>
+            <sequenceNumber>6</sequenceNumber>
+            <enabled>true</enabled>
+            <messageSegment>tmp[&apos;hospitalization&apos;][&apos;admitSource&apos;][&apos;coding&apos;][0][&apos;code&apos;]</messageSegment>
+            <mapping>msg[&apos;PV1&apos;][&apos;PV1.14&apos;][&apos;PV1.14.1&apos;].toString()</mapping>
+            <defaultValue></defaultValue>
+            <replacements/>
+          </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
+          <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="3.11.0">
+            <name>hospitalization - admitSource - text (out) &lt;-- Patient visit - Admit Source - PV1.14.2 (in)</name>
+            <sequenceNumber>7</sequenceNumber>
+            <enabled>true</enabled>
+            <messageSegment>tmp[&apos;hospitalization&apos;][&apos;admitSource&apos;][&apos;text&apos;]</messageSegment>
+            <mapping>msg[&apos;PV1&apos;][&apos;PV1.14&apos;][&apos;PV1.14.2&apos;].toString()</mapping>
+            <defaultValue></defaultValue>
+            <replacements/>
+          </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>
+          <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.11.0">
+            <name>set location</name>
+            <sequenceNumber>8</sequenceNumber>
+            <enabled>true</enabled>
+            <script>//Site
+var site = globalMap.get(msg[&apos;PV1&apos;][&apos;PV1.3&apos;][&apos;PV1.3.4&apos;].toString());
+tmp[&apos;location&apos;][0][&apos;location&apos;][&apos;reference&apos;] = &quot;Location/&quot;+site;
+tmp[&apos;location&apos;][0][&apos;location&apos;][&apos;display&apos;] = globalMap.get(site);
+//Ward
+var ward = globalMap.get(msg[&apos;PV1&apos;][&apos;PV1.3&apos;][&apos;PV1.3.1&apos;].toString());
+tmp[&apos;location&apos;][1][&apos;location&apos;][&apos;reference&apos;] = &quot;Location/&quot;+ward;
+tmp[&apos;location&apos;][1][&apos;location&apos;][&apos;display&apos;] = globalMap.get(ward);
+//Bed
+var bed = globalMap.get(msg[&apos;PV1&apos;][&apos;PV1.3&apos;][&apos;PV1.3.3&apos;].toString());
+tmp[&apos;location&apos;][2][&apos;location&apos;][&apos;reference&apos;] = &quot;Location/&quot;+bed
+tmp[&apos;location&apos;][2][&apos;location&apos;][&apos;display&apos;] = globalMap.get(bed);</script>
+          </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
+          <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.11.0">
+            <name>set service provider</name>
+            <sequenceNumber>9</sequenceNumber>
+            <enabled>true</enabled>
+            <script>//Service Provider
+var serviceProvider = globalMap.get(&quot;ZZ1&quot;);
+tmp[&apos;serviceProvider&apos;][&apos;reference&apos;] = &quot;Organization/&quot;+serviceProvider
+tmp[&apos;serviceProvider&apos;][&apos;display&apos;] = globalMap.get(serviceProvider);</script>
+          </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
+          <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.11.0">
+            <name>set encounter id</name>
+            <sequenceNumber>10</sequenceNumber>
+            <enabled>true</enabled>
+            <script>//If an id map entry exists for this nhs number then use it, else create one
+var visitNumber = msg[&apos;PV1&apos;][&apos;PV1.19&apos;][&apos;PV1.19.1&apos;].toString()
+var encounterResourceId = globalMap.get(visitNumber);
+if(!encounterResourceId)
+{
+	encounterResourceId = UUIDGenerator.getUUID();
+	globalMap.put(visitNumber, encounterResourceId);
+}
+//Add id to channel map
+channelMap.put(&apos;encounterResourceId&apos;,encounterResourceId);
+//Set id property on outbound FHIR resource...
+tmp[&apos;id&apos;] = encounterResourceId;</script>
+          </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
+          <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.11.0">
+            <name>set discharge information if this is an ADT-A03</name>
+            <sequenceNumber>11</sequenceNumber>
+            <enabled>true</enabled>
+            <script>if(msg[&apos;MSH&apos;][&apos;MSH.9&apos;][&apos;MSH.9.2&apos;].toString() === &quot;A03&quot;) {
+	var endDateTime = convertToFhirTimestamp(msg[&apos;PV1&apos;][&apos;PV1.45&apos;][&apos;PV1.45.1&apos;].toString());
+	tmp[&apos;status&apos;] = &quot;finished&quot;;
+	tmp[&apos;statusHistory&apos;][0][&apos;period&apos;][&apos;end&apos;] = endDateTime;
+	tmp[&apos;period&apos;][&apos;end&apos;] = endDateTime;
+	tmp[&apos;hospitalization&apos;][&apos;dischargeDisposition&apos;][&apos;coding&apos;][0][&apos;code&apos;] = msg[&apos;PV1&apos;][&apos;PV1.36&apos;][&apos;PV1.36.1&apos;].toString();
+	tmp[&apos;hospitalization&apos;][&apos;dischargeDisposition&apos;][&apos;text&apos;] = msg[&apos;PV1&apos;][&apos;PV1.36&apos;][&apos;PV1.36.2&apos;].toString();
+	tmp[&apos;location&apos;][0][&apos;status&apos;] = &quot;completed&quot;;
+	tmp[&apos;location&apos;][1][&apos;status&apos;] = &quot;completed&quot;;
+	tmp[&apos;location&apos;][2][&apos;status&apos;] = &quot;completed&quot;;
+} else {
+	delete tmp[&apos;hospitalization&apos;][&apos;dischargeDisposition&apos;];
+	delete tmp[&apos;period&apos;][&apos;end&apos;];
+	delete tmp[&apos;statusHistory&apos;][0][&apos;period&apos;][&apos;end&apos;];
+}</script>
+          </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
+        </elements>
+        <inboundTemplate encoding="base64">TVNIfF5+XCZ8VFJBS0NBUkV8WloxfFJPVVRFUnxST1VURVJ8MjAyMTA3MTExNTU1MDB8fEFEVF5BMDF8Nno4MTl8UHwyLjR8fHxBTHxORXx8fEVOXmVuZ2xpc2heSVNPNjM5fApQSUR8MXw5NDQ5MzA1NTI4Xl5eTkhTXk5IU3xBMTIzNDUyMV5eXlJBNF5IUk58fFRPVEhJTExeQUxMSVNPTl5eXk1pc3NeXkx8fDE5OTYwMzExfDJ8fEVeV2hpdGUgYW5kIEJsYWNrIEFmcmljYW58WWVvdmlsIERpc3RyaWN0IEhvc3BpdGFsXktpbmdzdG9uIFJvYWReWWVvdmlsXlNvbWVyc2V0XkJBMjEgNEFUXl5QXl5eXnx8fHx8fEsxXkFnbm9zdGljfHx8fHx8fHx8fHx8fHx8fDIwMTYwMzA4MTU1NDUyfHx8fHwKUEQxfHx8WTA2NjAxXlkwNjYwMV58WTA2NjAxXk1hbHRvbiBHUCBQcmFjdGljZV5eXl5eXl5UUkFLQ0FSRV5eXl5ETnx8fHx8fHx8fHx8fHx8fHx8ClBWMXwxfEV8RU1FUl5eRU1FUi0yXlpaMTAxXl5efHx8fEc4OTk5OTkyXkxhbm5pc3Rlcl5UeXJpb25eXl4xXl5eU01DXl5eXkROfHx8MTAwfHx8fDE5XlVzdWFsIHBsYWNlIG9mIHJlc2lkZW5jZXx8fHx8WloxMDA5OXx8fHx8fHx8fHx8fHx8fHx8NTFeTkhTIG90aGVyIEhvc3BpdGFsIFByb3ZpZGVyIC0gV2FyZCBmb3IgZ2VuZXJhbCBQYXRpZW50cyBvciB0aGUgeW91bmdlciBwaHlzaWNhbGx5IGRpc2FibGVkfHx8fHx8fHwyMDIxMDcxMTE1NTUwMHwyMDIxMDcxMTIwNTUwMHx8fHx8fHwKUFYyfHx8fHx8fHx8MjAyMTA3MTExNTU1MDB8MHx8fDE5XlVzdWFsIHBsYWNlIG9mIHJlc2lkZW5jZXx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHw=</inboundTemplate>
+        <outboundTemplate encoding="base64">ewogICAgInJlc291cmNlVHlwZSI6ICJFbmNvdW50ZXIiLAogICAgImlkIjogIiIsCiAgICAibWV0YSI6IHsKICAgICAgICAicHJvZmlsZSI6IFsKICAgICAgICAgICAgImh0dHBzOi8vZmhpci5obDcub3JnLnVrL1NUVTMvU3RydWN0dXJlRGVmaW5pdGlvbi9DYXJlQ29ubmVjdC1FbmNvdW50ZXItMSIKICAgICAgICBdCiAgICB9LAogICAgImlkZW50aWZpZXIiOiBbCiAgICAgICAgewogICAgICAgICAgICAic3lzdGVtIjogImh0dHBzOi8vc3RtdW5nb3MubmhzLnVrL0lkL2VuY291bnRlci1pZGVudGlmaWVyIiwKICAgICAgICAgICAgInZhbHVlIjogIiIKICAgICAgICB9CiAgICBdLAogICAgInN0YXR1cyI6ICJpbi1wcm9ncmVzcyIsCiAgICAic3RhdHVzSGlzdG9yeSI6IFsKICAgICAgICB7CiAgICAgICAgICAgICJzdGF0dXMiOiAiaW4tcHJvZ3Jlc3MiLAogICAgICAgICAgICAicGVyaW9kIjogewogICAgICAgICAgICAgICAgInN0YXJ0IjogIiIsCgkJCQkiZW5kIjoiIgogICAgICAgICAgICB9CiAgICAgICAgfQogICAgXSwKICAgICJjbGFzcyI6IHsKICAgICAgICAic3lzdGVtIjogImh0dHA6Ly9obDcub3JnL2ZoaXIvdjMvQWN0Q29kZSIsCiAgICAgICAgImNvZGUiOiAiIiwKICAgICAgICAiZGlzcGxheSI6ICIiCiAgICB9LAogICAgInR5cGUiOiBbCiAgICAgICAgewogICAgICAgICAgICAiY29kaW5nIjogWwogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICJzeXN0ZW0iOiAiaHR0cDovL2hsNy5vcmcvZmhpci9lbmNvdW50ZXItdHlwZSIsCiAgICAgICAgICAgICAgICAgICAgImNvZGUiOiAiIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICBdLAogICAgICAgICAgICAidGV4dCI6ICIiCiAgICAgICAgfQogICAgXSwKICAgICJzdWJqZWN0IjogewogICAgICAgICJyZWZlcmVuY2UiOiAiIiwKICAgICAgICAiZGlzcGxheSI6ICIiCiAgICB9LAogICAgInBhcnRpY2lwYW50IjogWwogICAgICAgIHsKICAgICAgICAgICAgInR5cGUiOiBbCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgImNvZGluZyI6IFsKICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgInN5c3RlbSI6ICJodHRwOi8vaGw3Lm9yZy9maGlyL3YzL1BhcnRpY2lwYXRpb25UeXBlIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICJjb2RlIjogIkFUTkQiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgImRpc3BsYXkiOiAiYXR0ZW5kZXIiCiAgICAgICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICBdCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIF0sCiAgICAgICAgICAgICJpbmRpdmlkdWFsIjogewogICAgICAgICAgICAgICAgInJlZmVyZW5jZSI6ICIiLAogICAgICAgICAgICAgICAgImRpc3BsYXkiOiAiIgogICAgICAgICAgICB9CiAgICAgICAgfQogICAgXSwKICAgICJwZXJpb2QiOiB7CiAgICAgICAgInN0YXJ0IjogIiIsCgkJImVuZCI6IiIKICAgIH0sCiAgICAiaG9zcGl0YWxpemF0aW9uIjogewogICAgICAgICJhZG1pdFNvdXJjZSI6IHsKICAgICAgICAgICAgImNvZGluZyI6IFsKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAic3lzdGVtIjogImh0dHBzOi8vZmhpci5obDcub3JnLnVrL1NUVTMvQ29kZVN5c3RlbS9DYXJlQ29ubmVjdC1Tb3VyY2VPZkFkbWlzc2lvbi0xIiwKICAgICAgICAgICAgICAgICAgICAiY29kZSI6ICIiCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIF0sCiAgICAgICAgICAgICJ0ZXh0IjogIiIKICAgICAgICB9LAogICAgICAgICJkaXNjaGFyZ2VEaXNwb3NpdGlvbiI6IHsKICAgICAgICAgICAgImNvZGluZyI6IFsKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAic3lzdGVtIjogImh0dHBzOi8vZmhpci5obDcub3JnLnVrL1NUVTMvVmFsdWVTZXQvQ2FyZUNvbm5lY3QtRGlzY2hhcmdlRGVzdGluYXRpb24tMSIsCiAgICAgICAgICAgICAgICAgICAgImNvZGUiOiAiIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICBdLAogICAgICAgICAgICAidGV4dCI6ICIiCiAgICAgICAgfQogICAgfSwKICAgICJsb2NhdGlvbiI6IFsKICAgICAgICB7CiAgICAgICAgICAgICJsb2NhdGlvbiI6IHsKICAgICAgICAgICAgICAgICJyZWZlcmVuY2UiOiAiIiwKICAgICAgICAgICAgICAgICJkaXNwbGF5IjogIiIKICAgICAgICAgICAgfSwKICAgICAgICAgICAgInN0YXR1cyI6ICJhY3RpdmUiCiAgICAgICAgfSwKICAgICAgICB7CiAgICAgICAgICAgICJsb2NhdGlvbiI6IHsKICAgICAgICAgICAgICAgICJyZWZlcmVuY2UiOiAiIiwKICAgICAgICAgICAgICAgICJkaXNwbGF5IjogIiIKICAgICAgICAgICAgfSwKICAgICAgICAgICAgInN0YXR1cyI6ICJhY3RpdmUiCiAgICAgICAgfSwKICAgICAgICB7CiAgICAgICAgICAgICJsb2NhdGlvbiI6IHsKICAgICAgICAgICAgICAgICJyZWZlcmVuY2UiOiAiIiwKICAgICAgICAgICAgICAgICJkaXNwbGF5IjogIiIKICAgICAgICAgICAgfSwKICAgICAgICAgICAgInN0YXR1cyI6ICJhY3RpdmUiCiAgICAgICAgfQogICAgXSwKICAgICJzZXJ2aWNlUHJvdmlkZXIiOiB7CiAgICAgICAgInJlZmVyZW5jZSI6ICIiLAogICAgICAgICJkaXNwbGF5IjogIlN0LiBNdW5nb3MgTkhTIEZvdW5kYXRpb24gVHJ1c3QiCiAgICB9Cn0=</outboundTemplate>
+        <inboundDataType>HL7V2</inboundDataType>
+        <outboundDataType>FHIR</outboundDataType>
+        <inboundProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DataTypeProperties" version="3.11.0">
+          <serializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2SerializationProperties" version="3.11.0">
+            <handleRepetitions>true</handleRepetitions>
+            <handleSubcomponents>true</handleSubcomponents>
+            <useStrictParser>false</useStrictParser>
+            <useStrictValidation>false</useStrictValidation>
+            <stripNamespaces>true</stripNamespaces>
+            <segmentDelimiter>\r</segmentDelimiter>
+            <convertLineBreaks>true</convertLineBreaks>
+          </serializationProperties>
+          <deserializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DeserializationProperties" version="3.11.0">
+            <useStrictParser>false</useStrictParser>
+            <useStrictValidation>false</useStrictValidation>
+            <segmentDelimiter>\r</segmentDelimiter>
+          </deserializationProperties>
+          <batchProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2BatchProperties" version="3.11.0">
+            <splitType>MSH_Segment</splitType>
+            <batchScript></batchScript>
+          </batchProperties>
+          <responseGenerationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseGenerationProperties" version="3.11.0">
+            <segmentDelimiter>\r</segmentDelimiter>
+            <successfulACKCode>AA</successfulACKCode>
+            <successfulACKMessage></successfulACKMessage>
+            <errorACKCode>AE</errorACKCode>
+            <errorACKMessage>An Error Occurred Processing Message.</errorACKMessage>
+            <rejectedACKCode>AR</rejectedACKCode>
+            <rejectedACKMessage>Message Rejected.</rejectedACKMessage>
+            <msh15ACKAccept>false</msh15ACKAccept>
+            <dateFormat>yyyyMMddHHmmss.SSS</dateFormat>
+          </responseGenerationProperties>
+          <responseValidationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseValidationProperties" version="3.11.0">
+            <successfulACKCode>AA,CA</successfulACKCode>
+            <errorACKCode>AE,CE</errorACKCode>
+            <rejectedACKCode>AR,CR</rejectedACKCode>
+            <validateMessageControlId>true</validateMessageControlId>
+            <originalMessageControlId>Destination_Encoded</originalMessageControlId>
+            <originalIdMapVariable></originalIdMapVariable>
+          </responseValidationProperties>
+        </inboundProperties>
+        <outboundProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirDataTypeProperties" version="3.11.0">
+          <serializationProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirSerializationProperties" version="3.11.0">
+            <serializationType>JSON</serializationType>
+            <fhirVersion>STU3</fhirVersion>
+          </serializationProperties>
+          <deserializationProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirDeserializationProperties" version="3.11.0">
+            <serializationType>JSON</serializationType>
+          </deserializationProperties>
+          <batchProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirBatchProperties" version="3.11.0">
+            <splitType>JavaScript</splitType>
+            <batchScript></batchScript>
+          </batchProperties>
+        </outboundProperties>
+      </transformer>
+      <responseTransformer version="3.11.0">
+        <elements/>
+        <inboundDataType>FHIR</inboundDataType>
+        <outboundDataType>FHIR</outboundDataType>
+        <inboundProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirDataTypeProperties" version="3.11.0">
+          <serializationProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirSerializationProperties" version="3.11.0">
+            <serializationType>JSON</serializationType>
+            <fhirVersion>R4</fhirVersion>
+          </serializationProperties>
+          <deserializationProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirDeserializationProperties" version="3.11.0">
+            <serializationType>JSON</serializationType>
+          </deserializationProperties>
+          <batchProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirBatchProperties" version="3.11.0">
+            <splitType>JavaScript</splitType>
+            <batchScript></batchScript>
+          </batchProperties>
+        </inboundProperties>
+        <outboundProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirDataTypeProperties" version="3.11.0">
+          <serializationProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirSerializationProperties" version="3.11.0">
+            <serializationType>JSON</serializationType>
+            <fhirVersion>R4</fhirVersion>
+          </serializationProperties>
+          <deserializationProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirDeserializationProperties" version="3.11.0">
+            <serializationType>JSON</serializationType>
+          </deserializationProperties>
+          <batchProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirBatchProperties" version="3.11.0">
+            <splitType>JavaScript</splitType>
+            <batchScript></batchScript>
+          </batchProperties>
+        </outboundProperties>
+      </responseTransformer>
+      <filter version="3.11.0">
+        <elements/>
+      </filter>
+      <transportName>HTTP Sender</transportName>
+      <mode>DESTINATION</mode>
+      <enabled>true</enabled>
+      <waitForPrevious>true</waitForPrevious>
+    </connector>
+  </destinationConnectors>
+  <preprocessingScript>// Modify the message variable below to pre process data
+return message;</preprocessingScript>
+  <postprocessingScript>// This script executes once after a message has been processed
+// Responses returned from here will be stored as &quot;Postprocessor&quot; in the response map
+return;</postprocessingScript>
+  <deployScript>// This script executes once when the channel is deployed
+// You only have access to the globalMap and globalChannelMap here to persist data
+//Initialise a hardcoded business id -&gt; uuid map
+//See accompanying postman collection which initialises fhir resource dat for ids/uuids (ward-watcher-&gt;data-setup)
+globalMap.put(&apos;ZZ1&apos;,&apos;78eef75f-0a88-4dfe-afcb-890e73c47e8b&apos;);
+globalMap.put(&apos;Y06601&apos;,&apos;f5fa3c72-6191-4890-9498-e0b343d9af62&apos;);
+globalMap.put(&apos;B86609&apos;,&apos;d12a5fbe-2775-4d2c-8e60-f8374793df8e&apos;);
+globalMap.put(&apos;B86627&apos;,&apos;dd60f2bf-4a66-4744-b801-5b36eec10d67&apos;);
+globalMap.put(&apos;ZZ101&apos;,&apos;68a0e5ea-092f-4f0d-b879-953d657cb102&apos;);
+globalMap.put(&apos;ZZ102&apos;,&apos;d1f71237-0f39-4196-bb7e-f05610e99eec&apos;);
+globalMap.put(&apos;OBS&apos;,&apos;42fa7dcb-1e8f-41c1-9202-629d6efc4222&apos;);
+globalMap.put(&apos;OBS-1&apos;,&apos;61876087-26d0-433d-988a-fc4d09a80157&apos;);
+globalMap.put(&apos;OBS-2&apos;,&apos;67e5d166-835f-43ae-b485-52126d753e85&apos;);
+globalMap.put(&apos;OBS-3&apos;,&apos;c810f830-23d4-4948-946e-61b1bf39f483&apos;);
+globalMap.put(&apos;EMER&apos;,&apos;22765450-9b0d-42b8-b7bd-f3324aa4153b&apos;);
+globalMap.put(&apos;EMER-1&apos;,&apos;0dd7c671-fe26-4b83-aaf8-8b7db7a68e7f&apos;);
+globalMap.put(&apos;EMER-2&apos;,&apos;da817951-0db7-4a05-b79e-da0f4e5c5b42&apos;);
+globalMap.put(&apos;GEN&apos;,&apos;ca1ba62a-d707-457e-b747-26e4b0197611&apos;);
+globalMap.put(&apos;GEN-1&apos;,&apos;f55f0d84-8da4-4b26-a9ae-d4285fd9b0d1&apos;);
+globalMap.put(&apos;GEN-2&apos;,&apos;389caea5-51fc-4223-a11a-4fb185e3a0b8&apos;);
+globalMap.put(&apos;SURG&apos;,&apos;748ef36a-276f-4077-94ed-5c6532a49023&apos;);
+globalMap.put(&apos;SURG-1&apos;,&apos;923e8c4e-74c0-4369-ac6a-35bd165847a5&apos;);
+globalMap.put(&apos;9449306621&apos;,&apos;b1cf868a-cfe0-4c7b-96b0-868f29dcc891&apos;);
+globalMap.put(&apos;G8999991&apos;,&apos;05f14b7e-94aa-4b52-a4d4-d372da335c50&apos;);
+globalMap.put(&apos;9449310378&apos;,&apos;7dcd1f52-23b3-410f-aebb-7076bc4b592f&apos;);
+globalMap.put(&apos;G8999992&apos;,&apos;09b405f6-0fd9-4614-9f5d-ec3a9dbb183f&apos;);
+globalMap.put(&apos;9449305552&apos;,&apos;88da0324-049f-4de2-a177-c07e06e3c575&apos;);
+globalMap.put(&apos;9449306540&apos;,&apos;cb27c18c-b298-4b2a-818b-60d19f055aea&apos;);
+globalMap.put(&apos;9449306524&apos;,&apos;1f6ddea4-cf85-4b8f-bdca-739d645b532a&apos;);
+globalMap.put(&apos;G8999992&apos;,&apos;5ff485d9-b544-4adf-8db0-0ae7b0ab2dad&apos;);
+globalMap.put(&apos;G8999993&apos;,&apos;5ff485d9-b544-4adf-8db0-0ae7b0ab2dad&apos;);
+globalMap.put(&apos;ZZ1001&apos;,&apos;b9f6159e-5983-43f7-9a1d-e8377d11fb7f&apos;);
+globalMap.put(&apos;ZZ1002&apos;,&apos;1ccc8670-0066-43b8-90ad-206241b27966&apos;);
+globalMap.put(&apos;ZZ1003&apos;,&apos;1f6ddea4-cf85-4b8f-bdca-739d645b532a&apos;);
+//Initialise reference data
+//See accompanying postman collection which populates fhir apploiance (ward-watcher-&gt;data-setup)
+//Coding
+globalMap.put(&quot;I&quot;, { code: &quot;IMP&quot;, display: &quot;inpatient encounter&quot; });
+globalMap.put(&quot;E&quot;, { code: &quot;EMER&quot;, display: &quot;emergency attendance&quot; });
+globalMap.put(&quot;320&quot;, &quot;Cardiology Service&quot;);
+globalMap.put(&quot;110&quot;, &quot;Trauma and Orthopaedic Service&quot;);
+globalMap.put(&quot;180&quot;, &quot;Emergency Medicine Service&quot;);
+globalMap.put(&quot;300&quot;, &quot;General Internal Medicine Service&quot;);
+//Organization
+globalMap.put(&apos;78eef75f-0a88-4dfe-afcb-890e73c47e8b&apos;, &quot;St. Mungos NHS Foundation Trust&quot;);
+//GP Practices
+globalMap.put(&apos;f5fa3c72-6191-4890-9498-e0b343d9af62&apos;, &quot;Malton GP Practice&quot;);
+globalMap.put(&apos;d12a5fbe-2775-4d2c-8e60-f8374793df8e&apos;, &quot;SHAW LANE SURGERY&quot;);
+globalMap.put(&apos;dd60f2bf-4a66-4744-b801-5b36eec10d67&apos;, &quot;MARKET CROSS SURGERY&quot;);
+//Sites
+globalMap.put(&apos;68a0e5ea-092f-4f0d-b879-953d657cb102&apos;, &quot;St. Mungos General Hospital&quot;);
+globalMap.put(&apos;d1f71237-0f39-4196-bb7e-f05610e99eec&apos;, &quot;St. Mungos Surgery Centre&quot;);
+//Wards
+globalMap.put(&apos;42fa7dcb-1e8f-41c1-9202-629d6efc4222&apos;, &quot;Observation Ward&quot;);
+globalMap.put(&apos;22765450-9b0d-42b8-b7bd-f3324aa4153b&apos;, &quot;Emergency Admissions Ward&quot;);
+globalMap.put(&apos;ca1ba62a-d707-457e-b747-26e4b0197611&apos;, &quot;General Medical Ward&quot;);
+globalMap.put(&apos;748ef36a-276f-4077-94ed-5c6532a49023&apos;, &quot;Surgical Ward&quot;);
+//Beds
+globalMap.put(&apos;61876087-26d0-433d-988a-fc4d09a80157&apos;, &quot;Observation Ward Bed 1&quot;);
+globalMap.put(&apos;67e5d166-835f-43ae-b485-52126d753e85&apos;, &quot;Observation Ward Bed 2&quot;);
+globalMap.put(&apos;c810f830-23d4-4948-946e-61b1bf39f483&apos;, &quot;Observation Ward Bed 3&quot;);
+globalMap.put(&apos;0dd7c671-fe26-4b83-aaf8-8b7db7a68e7f&apos;, &quot;Emergency Admission Ward Bed 1&quot;);
+globalMap.put(&apos;da817951-0db7-4a05-b79e-da0f4e5c5b42&apos;, &quot;Emergency Admission Ward Bed 2&quot;);
+globalMap.put(&apos;f55f0d84-8da4-4b26-a9ae-d4285fd9b0d1&apos;, &quot;General Medical Ward Bed 1&quot;);
+globalMap.put(&apos;389caea5-51fc-4223-a11a-4fb185e3a0b8&apos;, &quot;General Medical Ward Bed 2&quot;);
+globalMap.put(&apos;923e8c4e-74c0-4369-ac6a-35bd165847a5&apos;, &quot;Surgical Ward Bed 1&quot;);
+//Practitioners
+globalMap.put(&apos;05f14b7e-94aa-4b52-a4d4-d372da335c50&apos;, &quot;Dr. Yara Greyjoy&quot;);
+globalMap.put(&apos;09b405f6-0fd9-4614-9f5d-ec3a9dbb183f&apos;, &quot;Mr. Tyrion Lannister&quot;);
+globalMap.put(&apos;5ff485d9-b544-4adf-8db0-0ae7b0ab2dad&apos;, &quot;Dr. Arya Stark&quot;);
+return;</deployScript>
+  <undeployScript>// This script executes once when the channel is undeployed
+// You only have access to the globalMap and globalChannelMap here to persist data
+return;</undeployScript>
+  <properties version="3.11.0">
+    <clearGlobalChannelMap>true</clearGlobalChannelMap>
+    <messageStorageMode>DEVELOPMENT</messageStorageMode>
+    <encryptData>false</encryptData>
+    <removeContentOnCompletion>false</removeContentOnCompletion>
+    <removeOnlyFilteredOnCompletion>false</removeOnlyFilteredOnCompletion>
+    <removeAttachmentsOnCompletion>false</removeAttachmentsOnCompletion>
+    <initialState>STARTED</initialState>
+    <storeAttachments>true</storeAttachments>
+    <metaDataColumns>
+      <metaDataColumn>
+        <name>SOURCE</name>
+        <type>STRING</type>
+        <mappingName>mirth_source</mappingName>
+      </metaDataColumn>
+      <metaDataColumn>
+        <name>TYPE</name>
+        <type>STRING</type>
+        <mappingName>mirth_type</mappingName>
+      </metaDataColumn>
+    </metaDataColumns>
+    <attachmentProperties version="3.11.0">
+      <type>None</type>
+      <properties/>
+    </attachmentProperties>
+    <resourceIds class="linked-hash-map">
+      <entry>
+        <string>Default Resource</string>
+        <string>[Default Resource]</string>
+      </entry>
+    </resourceIds>
+  </properties>
+  <exportData>
+    <metadata>
+      <enabled>true</enabled>
+      <lastModified>
+        <time>1626710278763</time>
+        <timezone>Europe/London</timezone>
+      </lastModified>
+      <pruningSettings>
+        <archiveEnabled>true</archiveEnabled>
+      </pruningSettings>
+    </metadata>
+    <codeTemplateLibraries>
+      <codeTemplateLibrary version="3.11.0">
+        <id>9025896a-65d0-458c-92ac-335fe985a232</id>
+        <name>HL7 v2.x to FHIR Helper Functions</name>
+        <revision>1</revision>
+        <lastModified>
+          <time>1626715733383</time>
+          <timezone>Etc/UTC</timezone>
+        </lastModified>
+        <description>General functions to help convert HL7 v2.x to FHIR resources.
+
+These are used by the example HL7 to FHIR transformer, as well as
+the &quot;HL7 v2.x to FHIR Creation Functions&quot; code template library.</description>
+        <includeNewChannels>false</includeNewChannels>
+        <enabledChannelIds>
+          <string>5cac280d-6688-446f-b4e1-300fd2e54568</string>
+          <string>1d7ec352-7bff-40f7-9c0e-35d27b4448ee</string>
+        </enabledChannelIds>
+        <disabledChannelIds>
+          <string>c187756a-2ea4-4c5c-b90e-0109db36268f</string>
+        </disabledChannelIds>
+        <codeTemplates>
+          <codeTemplate version="3.11.0">
+            <id>2cc062f8-aac9-48e1-947e-0567d4497e07</id>
+            <name>Cleanup FHIR Patient</name>
+            <revision>1</revision>
+            <lastModified>
+              <time>1626715733782</time>
+              <timezone>Etc/UTC</timezone>
+            </lastModified>
+            <contextSet>
+              <delegate>
+                <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+                <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>SOURCE_RECEIVER</contextType>
+              </delegate>
+            </contextSet>
+            <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
+              <type>FUNCTION</type>
+              <code>/**
+	Removes name / telecom / address entries with no actual value.
+
+	@param {Object} patient - The JavaScript Object representing the FHIR Patient.
+	@return {Object} The same Object passed in, cleaned up.
+*/
+function cleanupFhirPatient(patient) {
+	// Remove names with no value
+	cleanupFhirNames(patient, &apos;name&apos;);
+	
+	// Remove telecom entries with no value
+	cleanupFhirTelecoms(patient, &apos;telecom&apos;);
+
+	// Remove address entries with no value
+	cleanupFhirAddresses(patient, &apos;address&apos;);
+
+	if (patient.contact) {
+		for each (contact in patient.contact) {
+			if (!isFhirNameValid(contact.name)) {
+				delete contact.name;
+			}
+			
+			cleanupFhirTelecoms(contact, &apos;telecom&apos;);
+
+			if (!isFhirAddressValid(contact.address)) {
+				delete contact.address;
+			}
+		}
+	}
+
+	return patient;
+}
+
+function cleanupFhirNames(parent, property) {
+	cleanupArray(parent, property, isFhirNameValid);
+}
+
+function isFhirNameValid(name) {
+	return name &amp;&amp; (!isValueEmpty(name.text) || !isValueEmpty(name.family) || !isValueEmpty(name.given) || !isValueEmpty(name.prefix) || !isValueEmpty(name.suffix));
+}
+
+function cleanupFhirTelecoms(parent, property) {
+	cleanupArray(parent, property, function(telecom) {
+		return !isValueEmpty(telecom.value);
+	});
+}
+
+function cleanupFhirAddresses(parent, property) {
+	cleanupArray(parent, property, isFhirAddressValid);
+}
+
+function isFhirAddressValid(address) {
+	return address &amp;&amp; (!isValueEmpty(address.text) || !isValueEmpty(address.line) || !isValueEmpty(address.city) || !isValueEmpty(address.state) || !isValueEmpty(address.postalCode) || !isValueEmpty(address.country));
+}
+
+function cleanupArray(parent, property, handleFunction) {
+	var arr = parent[property];
+
+	if (arr) {
+		var length = arr.length;
+		for (var i = length - 1; i &gt;= 0; i--) {
+			if (!handleFunction(arr[i])) {
+				delete arr[i];
+				length--;
+			}
+		}
+		arr.length = length;
+
+		// Handle Java arrays
+		if (arr.length != length) {
+			parent[property] = org.apache.commons.lang3.ArrayUtils.subarray(arr, 0, length);
+		}
+	}
+}</code>
+            </properties>
+          </codeTemplate>
+          <codeTemplate version="3.11.0">
+            <id>2e62489a-423d-4471-a919-ed3f71827199</id>
+            <name>Combine Arrays</name>
+            <revision>1</revision>
+            <lastModified>
+              <time>1626715733729</time>
+              <timezone>Etc/UTC</timezone>
+            </lastModified>
+            <contextSet>
+              <delegate>
+                <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+                <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>SOURCE_RECEIVER</contextType>
+              </delegate>
+            </contextSet>
+            <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
+              <type>FUNCTION</type>
+              <code>/**
+	Combines two arrays into one. Works with both Java and JavaScript arrays.
+
+	@param {Array} array1 - The first array.
+	@param {Array} array2 - The second array.
+	@return {Array} The combined array.
+*/
+function combineArrays(array1, array2) {
+	var isJavaArray1 = Object.prototype.toString.call(array1) == &apos;[object JavaArray]&apos;;
+	var isJavaArray2 = Object.prototype.toString.call(array2) == &apos;[object JavaArray]&apos;;
+
+	if (isJavaArray1 &amp;&amp; isJavaArray2) {
+		return org.apache.commons.lang3.ArrayUtils.addAll(array1, array2);
+	} else if (isJavaArray1) {
+		for (var i = array1.length - 1; i &gt;= 0; i--) {
+			array2.unshift(array1[i]);
+		}
+		return array2;
+	} else {
+		for each (value in array2) {
+			array1.push(value);
+		}
+		return array1;
+	}
+}</code>
+            </properties>
+          </codeTemplate>
+          <codeTemplate version="3.11.0">
+            <id>6faf1e4b-d159-4d34-a07a-2fe0a3bde4cf</id>
+            <name>Consolidate Empty Properties</name>
+            <revision>1</revision>
+            <lastModified>
+              <time>1626715733861</time>
+              <timezone>Etc/UTC</timezone>
+            </lastModified>
+            <contextSet>
+              <delegate>
+                <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+                <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>SOURCE_RECEIVER</contextType>
+              </delegate>
+            </contextSet>
+            <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
+              <type>FUNCTION</type>
+              <code>/**
+	Removes empty strings, objects and arrays from a JavaScript object.
+
+	@param {Object/Array} obj - The object or array to consolidate.
+	@return {Object/Array} The consolidates object or array.
+*/
+function consolidate(obj) {
+	if (typeof obj != &apos;undefined&apos; &amp;&amp; obj != null) {
+		var protoToString = Object.prototype.toString.call(obj);
+		
+		if (obj instanceof Array || protoToString == &apos;[object Array]&apos; || protoToString == &apos;[object JavaArray]&apos;) {
+			var length = obj.length;
+			
+			for (var i = obj.length - 1; i &gt;= 0; i--) {
+				if (!doConsolidate(obj, i)) {
+					length--;
+				}
+			}
+			obj.length = length;
+
+			// Handle Java Arrays
+			if (length != obj.length) {
+				obj = org.apache.commons.lang3.ArrayUtils.subarray(obj, 0, length);
+			}
+		} else if (protoToString == &apos;[object Object]&apos;) {
+			for (var property in obj) {
+				doConsolidate(obj, property);
+			}
+		}
+	}
+	return obj;
+}
+
+function doConsolidate(obj, property) {
+	var value = obj[property] = consolidate(obj[property]);
+	var empty = isValueEmpty(value);
+	if (empty) {
+		delete obj[property];
+	}
+	return !empty;
+}
+
+function isValueEmpty(value) {
+	var protoToString = Object.prototype.toString.call(value);
+
+	if (typeof value == &apos;undefined&apos; || value == null) {
+		return true;
+	} else if (value instanceof Array || protoToString == &apos;[object Array]&apos; || protoToString == &apos;[object JavaArray]&apos;) {
+		if (value.length &gt; 0) {
+			for each (element in value) {
+				if (!isValueEmpty(element)) {
+					return false;
+				}
+			}
+		}
+		return true;
+	} else if (typeof value == &apos;string&apos; || protoToString == &apos;[object String]&apos;) {
+		return value.length == 0;
+	} else if (value instanceof java.lang.String) {
+		return org.apache.commons.lang3.StringUtils.isEmpty(value);
+	} else if (protoToString == &apos;[object Object]&apos;) {
+		for (var property in value) {
+			if (!isValueEmpty(value[property])) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	return false;
+}
+</code>
+            </properties>
+          </codeTemplate>
+          <codeTemplate version="3.11.0">
+            <id>b7bffbe4-9da5-40a8-8a35-7e3ad5a9bebf</id>
+            <name>Convert Address Use</name>
+            <revision>1</revision>
+            <lastModified>
+              <time>1626715733590</time>
+              <timezone>Etc/UTC</timezone>
+            </lastModified>
+            <contextSet>
+              <delegate>
+                <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+                <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>SOURCE_RECEIVER</contextType>
+              </delegate>
+            </contextSet>
+            <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
+              <type>FUNCTION</type>
+              <code>/**
+	Converts an HL7 v2.x address type code to the corresponding FHIR address use.
+
+	@param {String} code - The HL7 address type (Table 0190)
+	@return {String} The FHIR address use code
+*/
+function convertAddressUse(code) {
+	var fhirCode;
+	
+	switch ((code + &apos;&apos;).toUpperCase()) {
+		case &apos;H&apos;:
+		case &apos;L&apos;:
+		case &apos;M&apos;:
+		case &apos;P&apos;:
+		case &apos;SH&apos;:
+			fhirCode = org.hl7.fhir.dstu3.model.codesystems.AddressUse.HOME;
+			break;
+		case &apos;B&apos;:
+		case &apos;O&apos;:
+		case &apos;BI&apos;:
+			fhirCode = org.hl7.fhir.dstu3.model.codesystems.AddressUse.WORK;
+			break;
+		case &apos;C&apos;:
+		case &apos;V&apos;:
+			fhirCode = org.hl7.fhir.dstu3.model.codesystems.AddressUse.TEMP;
+			break;
+		default:
+			fhirCode = org.hl7.fhir.dstu3.model.codesystems.AddressUse.OLD;
+	}
+
+	return fhirCode.toCode();
+}</code>
+            </properties>
+          </codeTemplate>
+          <codeTemplate version="3.11.0">
+            <id>687a3eef-3155-47c8-bb12-de158d0055ac</id>
+            <name>Convert Date</name>
+            <revision>1</revision>
+            <lastModified>
+              <time>1626715733396</time>
+              <timezone>Etc/UTC</timezone>
+            </lastModified>
+            <contextSet>
+              <delegate>
+                <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+                <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>SOURCE_RECEIVER</contextType>
+              </delegate>
+            </contextSet>
+            <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
+              <type>FUNCTION</type>
+              <code>/**
+	Converts an HL7 v2.x formatted date into the correct format for FHIR date.
+	
+	HL7 format expected: yyyyMMdd
+	FHIR format: yyyy-MM-dd
+
+	@param {String} date - The HL7 v2.x date string
+	@return {String} The converted FHIR date string
+*/
+function convertToFhirDate(date) {
+	return convertToFhirTimestamp(date, &quot;yyyy-MM-dd&quot;);
+}</code>
+            </properties>
+          </codeTemplate>
+          <codeTemplate version="3.11.0">
+            <id>f338c38c-477a-4dca-8714-2e96c382716e</id>
+            <name>Convert Gender</name>
+            <revision>1</revision>
+            <lastModified>
+              <time>1626715733680</time>
+              <timezone>Etc/UTC</timezone>
+            </lastModified>
+            <contextSet>
+              <delegate>
+                <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+                <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>SOURCE_RECEIVER</contextType>
+              </delegate>
+            </contextSet>
+            <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
+              <type>FUNCTION</type>
+              <code>/**
+	Converts an HL7 v2.x gender code to the corresponding FHIR code.
+
+	@param {String} code - The HL7 gender code (Table 0001)
+	@return {String} The FHIR administrative gender code
+*/
+function convertToFhirGender(code) {
+	var fhirCode;
+	
+	switch ((code + &apos;&apos;).toUpperCase()) {
+		case &apos;F&apos;:
+			fhirCode = org.hl7.fhir.dstu3.model.codesystems.AdministrativeGender.FEMALE;
+			break;
+		case &apos;M&apos;:
+			fhirCode = org.hl7.fhir.dstu3.model.codesystems.AdministrativeGender.MALE;
+			break;
+		case &apos;O&apos;:
+		case &apos;A&apos;:
+		case &apos;N&apos;:
+			fhirCode = org.hl7.fhir.dstu3.model.codesystems.AdministrativeGender.OTHER;
+			break;
+		case &apos;U&apos;:
+		default:
+			fhirCode = org.hl7.fhir.dstu3.model.codesystems.AdministrativeGender.UNKNOWN;
+	}
+
+	return fhirCode.toCode();
+}</code>
+            </properties>
+          </codeTemplate>
+          <codeTemplate version="3.11.0">
+            <id>0061fef8-39be-48c1-b81e-60719c97c149</id>
+            <name>Convert Timestamp</name>
+            <revision>1</revision>
+            <lastModified>
+              <time>1626715733509</time>
+              <timezone>Etc/UTC</timezone>
+            </lastModified>
+            <contextSet>
+              <delegate>
+                <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+                <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>SOURCE_RECEIVER</contextType>
+              </delegate>
+            </contextSet>
+            <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
+              <type>FUNCTION</type>
+              <code>/**
+	Converts an HL7 v2.x formatted timestamp into the correct format for FHIR dateTime.
+	
+	HL7 format expected: yyyyMMddHHmmssZZ
+	FHIR format: yyyy-MM-dd&apos;T&apos;HH:mm:ssZZ
+
+	@param {String} date - The HL7 v2.x timestamp string
+	@return {String} The converted FHIR timestamp string
+*/
+function convertToFhirTimestamp(date) {
+	if (!date) {
+		return &apos;&apos;;
+	}
+
+	var patterns = [
+		&quot;yyyyMMddHHmmss.SSSZZ&quot;,
+		&quot;yyyyMMddHHmmss.SSSZ&quot;,
+		&quot;yyyyMMddHHmmss.SSS&quot;,
+		&quot;yyyyMMddHHmmssZZ&quot;,
+		&quot;yyyyMMddHHmmssZ&quot;,
+		&quot;yyyyMMddHHmmss&quot;,
+		&quot;yyyyMMddHHmm&quot;,
+		&quot;yyyyMMddHH&quot;,
+		&quot;yyyyMMdd&quot;
+	];
+
+	var instant;
+	for each (pattern in patterns) {
+		try {
+			instant = org.joda.time.format.DateTimeFormat.forPattern(pattern).parseMillis(new String(date));
+			break;
+		} catch(e) {}
+	}
+
+	if (instant) {
+		var outpattern = arguments.length &gt;= 2 ? arguments[1] : &quot;yyyy-MM-dd&apos;T&apos;HH:mm:ssZZ&quot;;
+		try {
+			return org.joda.time.format.DateTimeFormat.forPattern(outpattern).print(instant);
+		} catch (e) {}
+	}
+	
+	return date;
+}</code>
+            </properties>
+          </codeTemplate>
+          <codeTemplate version="3.11.0">
+            <id>760658e4-f24f-4a57-bbb9-9ae847f6daf8</id>
+            <name>Convert Yes/No Indicator</name>
+            <revision>1</revision>
+            <lastModified>
+              <time>1626715733824</time>
+              <timezone>Etc/UTC</timezone>
+            </lastModified>
+            <contextSet>
+              <delegate>
+                <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+                <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>SOURCE_RECEIVER</contextType>
+              </delegate>
+            </contextSet>
+            <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
+              <type>FUNCTION</type>
+              <code>/**
+	Converts an HL7 v2.x yes/no indicator code to a boolean value. If the code is null or an empty string,
+	false will be returned.
+
+	@param {String} code - The HL7 yes/no indicator (Table 0136)
+	@return {Boolean} True/false
+*/
+function convertYesNoIndicator(code) {
+	return code == &apos;Y&apos;;
+}</code>
+            </properties>
+          </codeTemplate>
+        </codeTemplates>
+      </codeTemplateLibrary>
+    </codeTemplateLibraries>
+  </exportData>
+</channel>
