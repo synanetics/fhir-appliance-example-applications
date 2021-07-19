@@ -4,7 +4,7 @@
  * Created Date: Sunday July 18th 2021
  * Author: Rob Organ
  * -----
- * Last Modified: Sunday July 18th 2021 6:14:30 pm
+ * Last Modified: Monday July 19th 2021 8:38:23 am
  * Modified By: Rob Organ
  * -----
  * Copyright (c) 2021 Synanetics Ltd
@@ -12,6 +12,8 @@
  */
 
 "use strict";
+
+const moment = require("moment-timezone");
 
 module.exports = {
     getReference: (value) => {
@@ -78,5 +80,19 @@ module.exports = {
             } else if (system === ident.system) return ident.value;
         }
         return noSystem;
+    },
+    /**
+     * Return a patient age in years given a dob in the specified format (defaults to YYYY-MM-DD)
+     */
+    getPatientAgeInYears: (dateOfBirth, format = "YYYY-MM-DD") => {
+        const now = moment();
+        const dob = moment(dateOfBirth, format);
+        return moment.duration(now.diff(dob)).years();
+    },
+    /**
+     * Format nhs number for display
+     */
+    formatNHSNumberForDisplay: (nhsNumber) => {
+        return `${nhsNumber.substr(0, 3)} ${nhsNumber.substr(3, 3)} ${nhsNumber.substr(6, 4)}`;
     },
 };

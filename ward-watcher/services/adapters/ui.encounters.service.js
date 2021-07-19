@@ -4,7 +4,7 @@
  * Created Date: Sunday July 18th 2021
  * Author: Rob Organ
  * -----
- * Last Modified: Sunday July 18th 2021 9:37:07 pm
+ * Last Modified: Monday July 19th 2021 10:48:39 am
  * Modified By: Rob Organ
  * -----
  * Copyright (c) 2021 Synanetics Ltd
@@ -21,10 +21,12 @@ module.exports = {
     mixins: [UIServiceAdapter, ServiceAdapter],
     actions: {
         async get(ctx) {
-            //Fetch totals by site for St. Mungos
-
+            const { encounterId } = ctx.params.data;
+            const encounter = await ctx.call("encounters.getEncounterDetails", {
+                search: { encounterId },
+            });
             //Return the view for rendering
-            return { view: "encounter", data: {} };
+            return { view: "encounter", data: { encounter } };
         },
     },
 };

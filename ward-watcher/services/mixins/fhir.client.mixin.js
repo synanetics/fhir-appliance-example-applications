@@ -4,7 +4,7 @@
  * Created Date: Friday July 16th 2021
  * Author: Rob Organ
  * -----
- * Last Modified: Sunday July 18th 2021 8:31:02 pm
+ * Last Modified: Monday July 19th 2021 11:17:22 am
  * Modified By: Rob Organ
  * -----
  * Copyright (c) 2021 Synanetics Ltd
@@ -66,10 +66,12 @@ module.exports = {
                 let url = `${process.env.APP_FHIR_APPLIANCE_HOST}:${process.env.APP_FHIR_APPLIANCE_PORT}/${process.env.APP_FHIR_APPLIANCE_PATH}/${this.settings.fhir.resourceType}`;
                 if (interaction === "search") {
                     //Extract parameters from ctx.params
-                    const { search } = ctx.params;
+                    const search = this.settings.fhir[ctx.action.rawName]?.search ?? ctx.params.search;
                     let queryString = "";
                     for (const param in search) {
-                        queryString = `${queryString}&${param}=${search[param]}`;
+                        queryString = `${queryString}${queryString.length > 0 ? "&" : ""}${param}=${
+                            ctx.params.search ? ctx.params.search[search[param]] ?? search[param] : search[param]
+                        }`;
                     }
                     url = `${url}?${queryString}`;
                 } else if (["read", "update", "delete"].includes(interaction.toLowerCase())) {
@@ -82,8 +84,10 @@ module.exports = {
                     fhirRequest.opt.json = resource;
                 }
                 ctx.locals.fhir.request = fhirRequest;
+                this.logger.info(`FHIR Request --------------------> ${JSON.stringify(ctx.locals.fhir.request)}`);
                 //4 Execute the request based on the interaction type
                 ctx.locals.fhir.response = await got(url, fhirRequest);
+                this.logger.info(`${JSON.stringify(ctx.locals.fhir.response)} <-------------------- FHIR Response`);
             },
         },
     },

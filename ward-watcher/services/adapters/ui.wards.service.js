@@ -4,7 +4,7 @@
  * Created Date: Sunday July 18th 2021
  * Author: Rob Organ
  * -----
- * Last Modified: Sunday July 18th 2021 8:34:36 pm
+ * Last Modified: Monday July 19th 2021 10:57:10 am
  * Modified By: Rob Organ
  * -----
  * Copyright (c) 2021 Synanetics Ltd
@@ -29,13 +29,13 @@ module.exports = {
             };
             if (!wardId) {
                 data.totals = await ctx.call("encounters.getEncounterTotalsGroupedBySiteAndWard", {
-                    search: { location: `Location/${siteId}`, status: "in-progress" },
+                    search: { site: `Location/${siteId}` },
                 });
             } else {
                 //Fetch all the encounters for the given ward
                 data.ward = wardId;
                 data.encounters = await ctx.call("encounters.getEncountersByWard", {
-                    search: { location: `Location/${wardId}`, status: "in-progress" },
+                    search: { ward: `Location/${wardId}` },
                 });
             }
             //Return the view for rendering

@@ -4,7 +4,7 @@
  * Created Date: Friday July 16th 2021
  * Author: Rob Organ
  * -----
- * Last Modified: Sunday July 18th 2021 10:03:34 pm
+ * Last Modified: Monday July 19th 2021 11:14:41 am
  * Modified By: Rob Organ
  * -----
  * Copyright (c) 2021 Synanetics Ltd
@@ -14,7 +14,7 @@
 "use strict";
 
 //Helpers
-const { getReference } = require("../utils/fhir");
+const { getReference, getPatientAgeInYears, getIdentifier, formatNHSNumberForDisplay } = require("../utils/fhir");
 //Node modules
 const bcrypt = require("bcrypt");
 const moment = require("moment-timezone");
@@ -30,10 +30,41 @@ module.exports = {
     settings: {
         fhir: {
             resourceType: "Encounter",
-            getEncounterTotalsGroupedByServiceProvider: { interaction: "search" },
-            getEncounterTotalsGroupedBySite: { interaction: "search" },
-            getEncounterTotalsGroupedBySiteAndWard: { interaction: "search" },
-            getEncountersByWard: { interaction: "search" },
+            getEncounterTotalsGroupedByServiceProvider: {
+                interaction: "search",
+                search: {
+                    status: "in-progress",
+                },
+            },
+            getEncounterTotalsGroupedBySite: {
+                interaction: "search",
+                search: {
+                    status: "in-progress",
+                    "service-provider": "organization",
+                },
+            },
+            getEncounterTotalsGroupedBySiteAndWard: {
+                interaction: "search",
+                search: {
+                    status: "in-progress",
+                    location: "site",
+                },
+            },
+            getEncountersByWard: {
+                interaction: "search",
+                search: {
+                    status: "in-progress",
+                    location: "ward",
+                },
+            },
+            getEncounterDetails: {
+                interaction: "search",
+                search: {
+                    _id: "encounterId",
+                    _include: "Encounter:patient",
+                    "_include:recurse": "Patient:general-practitioner",
+                },
+            },
         },
     },
     actions: {
@@ -86,7 +117,6 @@ module.exports = {
         async getEncounterTotalsGroupedBySiteAndWard(ctx) {
             //FHIR Client will execute the request and attach results to ctx.locals.fhir.data before this action is called
             //In this case, a FHIR search will be executed and a bundle of encounters attached
-            //Extract and map ward info from the fhir encounter resource
             const wards = ctx.locals.fhir.response.entry.map((e) => {
                 return {
                     reference: e.resource.location[1].location.reference,
@@ -110,7 +140,6 @@ module.exports = {
         async getEncountersByWard(ctx) {
             //FHIR Client will execute the request and attach results to ctx.locals.fhir.data before this action is called
             //In this case, a FHIR search will be executed and a bundle of encounters attached
-            //Extract and map ward info from the fhir encounter resource
             const encounters = ctx.locals.fhir.response.entry.map((e) => {
                 return {
                     id: e.resource.id,
@@ -122,6 +151,56 @@ module.exports = {
             });
             return encounters;
         },
-        async getEncounter(ctx) {},
+        async getEncounterDetails(ctx) {
+            //Bundle results will contain encounter, patient, general practice
+            const encounter = {};
+            //Extract and transform what is needed from the encounter
+            const encounterDetail = ctx.locals.fhir.response.entry
+                .filter((e) => e.resource.resourceType.toLowerCase() === "encounter")
+                .map((e) => {
+                    return {
+                        status: e.resource.status,
+                        startDate: moment(e.resource.period.start).format("DD MMMM YYYY"),
+                        startTime: moment.tz(e.resource.period.start, process.env.APP_TZ ?? "Europe/London").format("HH:mm"),
+                        consultant: e.resource.participant[0].individual.display,
+                        specialty: `${e.resource.type[0].text} (${e.resource.type[0].coding[0].code})`,
+                        class: e.resource.class.display,
+                        admitSource: `${e.resource.hospitalization.admitSource.text} (${e.resource.hospitalization.admitSource.coding[0].code})`,
+                        bed: e.resource.location[2].location.display,
+                        ward: e.resource.location[1].location.display,
+                        site: e.resource.location[0].location.display,
+                    };
+                })[0];
+            Object.assign(encounter, encounterDetail);
+            //Extract patient details
+            const patient = ctx.locals.fhir.response.entry
+                .filter((e) => e.resource.resourceType.toLowerCase() === "patient")
+                .map((e) => {
+                    return {
+                        name: `${e.resource.name[0].family.toUpperCase()}, ${e.resource.name[0].given[0]
+                            .substr(0, 1)
+                            .toUpperCase()}${e.resource.name[0].given[0].substr(1).toLowerCase()}`,
+                        dob: moment(e.resource.birthDate).format("DD MMMM YYYY"),
+                        ageInYears: getPatientAgeInYears(e.resource.birthDate),
+                        gender: `${e.resource.gender.substr(0, 1).toUpperCase()}${e.resource.gender.substr(1).toLowerCase()}`,
+                        nhsNumber: formatNHSNumberForDisplay(getIdentifier(e.resource.identifier, "https://fhir.nhs.uk/Id/nhs-number")),
+                    };
+                })[0];
+            encounter.patient = patient;
+            //Extract general practice
+            const generalPractice = ctx.locals.fhir.response.entry
+                .filter((e) => e.resource.resourceType.toLowerCase() === "organization")
+                .map((e) => {
+                    return {
+                        name: e.resource.name,
+                        ods: getIdentifier(e.resource.identifier, "https://fhir.nhs.uk/Id/ods-organization-code"),
+                        phone: e.resource.telecom ? e.resource.telecom[0].value : "",
+                        address: e.resource.address ? e.resource.address[0] : {},
+                    };
+                })[0];
+            encounter.generalPractice = generalPractice;
+            //Return transformed encounter
+            return encounter;
+        },
     },
 };

@@ -11,22 +11,96 @@
     <div class-"nhsuk-grid-column-full">
         <nav class="patient-info">
             <ul role="navigation">
-                <li><span style=""><strong>NHS Number: </strong> 3452 1007 6779</span></li>
-                <li><strong>Patient: </strong><a href="Patient name">EVANS, David (Mr)</a></li>
-                <li><strong>Gender: </strong> Male</li>
-                <li>30 years (4 June 1988)</li>
+                <li><span style=""><strong>NHS Number: </strong> {{encounter.patient.nhsNumber}}</span></li>
+                <li><strong>Patient: </strong><a href="/">{{encounter.patient.name}}</a></li>
+                <li><strong>Gender: </strong>{{encounter.patient.gender}}</li>
+                <li><strong>Age/DoB: </strong>{{encounter.patient.ageInYears}} yrs ({{encounter.patient.dob}})</li>
             </ul>
         </nav>
     </div>
 </div>
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
-        <h2>
-            Welcome {{ user.name.given}} {{ user.name.family }}
-            <span class="nhsuk-caption-xl nhsuk-caption--bottom">Ward Watcher</span>
-        </h2>
+        <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Status</dt>
+                <dt class="nhsuk-summary-list__value">{{encounter.status}}</dt>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Start Date/Time</dt>
+                <dt class="nhsuk-summary-list__value">{{encounter.startDate}} {{encounter.startTime}}</dt>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Consultant</dt>
+                <dt class="nhsuk-summary-list__value">{{encounter.consultant}}</dt>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Specialty</dt>
+                <dt class="nhsuk-summary-list__value">{{encounter.specialty}}</dt>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Class</dt>
+                <dt class="nhsuk-summary-list__value">{{encounter.class}}</dt>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Admission Source</dt>
+                <dt class="nhsuk-summary-list__value">{{encounter.admitSource}}</dt>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Bed</dt>
+                <dt class="nhsuk-summary-list__value">{{encounter.bed}}</dt>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Ward</dt>
+                <dt class="nhsuk-summary-list__value">{{encounter.ward}}</dt>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Site</dt>
+                <dt class="nhsuk-summary-list__value">{{encounter.site}}</dt>
+            </div>
+        </dl>
     </div>
-    <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+            <div class="nhsuk-panel nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-6">
+                <details class="nhsuk-details">
+                    <summary class="nhsuk-details__summary">
+                        <span class="nhsuk-details__summary-text">
+                            Patient General Practice
+                        </span>
+                    </summary>
+                    <div class="nhsuk-details__text">
+                        <dl class="nhsuk-summary-list">
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">Name</dt>
+                                <dt class="nhsuk-summary-list__value">{{encounter.generalPractice.name}} ({{encounter.generalPractice.ods}})</dt>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">Address</dt>
+                                <dt class="nhsuk-summary-list__value">{{encounter.generalPractice.address.line}} {{encounter.generalPractice.address.city}} {{encounter.generalPractice.address.district}} {{encounter.generalPractice.address.postalCode}}</dt>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">Phone</dt>
+                                <dt class="nhsuk-summary-list__value">{{encounter.generalPractice.phone}}</dt>
+                            </div>
+                        </dl>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+                <div class="nhsuk-back-link">
+                    <a class="nhsuk-back-link__link" id="backLink" style="cursor: pointer" onclick="javascript:window.history.back()">
+                        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+                        </svg>
+                        Back</a
+                    >
+                </div>
+            </div>
+        </div>
         <hr class="nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-5">
         <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
