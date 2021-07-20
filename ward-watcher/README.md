@@ -5,16 +5,23 @@ A simple web based application that uses FHIR resources to display information a
 ## Contents
 
 [Prerequisites](#prequisites)
+
 [Run the app](#run-the-app)
+
 [View the code](#view-the-code)
+
 [Launch Mirth Connect](#launch-mirth-connect)
 
 ## Prerequisites
 
 [Node.js](https://nodejs.org/en/)
+
 [Docker Desktop](https://www.docker.com/products/docker-desktop)
+
 [Docker Compose](https://docs.docker.com/compose/install/)
+
 [VS Code](https://code.visualstudio.com/)
+
 [Java](https://www.java.com/en/download/manual.jsp/) (for the Mirth Connect client - this is optional)
 
 ## Run the app
