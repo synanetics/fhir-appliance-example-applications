@@ -36,7 +36,7 @@ Once you have the prerequisites installed:
 
 4. From the `RUN AND DEBUG` tool bar (located in the top left side of the screen under the top menu bar), click the green run button. After a minute or so, the application and all backend services will be available. You should see the following when the app is up and running:
 
-<img src="/docs/media/ward-watcher-started.png" style="height:152;width=1549;margin-top:5px;margin-bottom:5px" />
+<img src="../docs/media/ward-watcher-started.PNG" style="height:152;width=1549;margin-top:5px;margin-bottom:5px" />
 
 5. Launch the app in your browser using http://localhost:3000/ 
 
