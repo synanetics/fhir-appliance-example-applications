@@ -3,7 +3,7 @@
   <nextMetaDataId>7</nextMetaDataId>
   <name>ADT to FHIR</name>
   <description></description>
-  <revision>1</revision>
+  <revision>3</revision>
   <sourceConnector version="3.11.0">
     <metaDataId>0</metaDataId>
     <name>sourceConnector</name>
@@ -737,6 +737,7 @@ return message;</preprocessingScript>
 return;</postprocessingScript>
   <deployScript>// This script executes once when the channel is deployed
 // You only have access to the globalMap and globalChannelMap here to persist data
+//In reality, these values would be read from a sql database or some other persistant storage
 //Initialise a hardcoded business id -&gt; uuid map
 //See accompanying postman collection which initialises fhir resource dat for ids/uuids (ward-watcher-&gt;data-setup)
 globalMap.put(&apos;ZZ1&apos;,&apos;78eef75f-0a88-4dfe-afcb-890e73c47e8b&apos;);
@@ -778,6 +779,7 @@ globalMap.put(&quot;320&quot;, &quot;Cardiology Service&quot;);
 globalMap.put(&quot;110&quot;, &quot;Trauma and Orthopaedic Service&quot;);
 globalMap.put(&quot;180&quot;, &quot;Emergency Medicine Service&quot;);
 globalMap.put(&quot;300&quot;, &quot;General Internal Medicine Service&quot;);
+globalMap.put(&quot;100&quot;, &quot;General Surgery&quot;);
 //Organization
 globalMap.put(&apos;78eef75f-0a88-4dfe-afcb-890e73c47e8b&apos;, &quot;St. Mungos NHS Foundation Trust&quot;);
 //GP Practices
@@ -845,7 +847,7 @@ return;</undeployScript>
     <metadata>
       <enabled>true</enabled>
       <lastModified>
-        <time>1626710278763</time>
+        <time>1626762493517</time>
         <timezone>Europe/London</timezone>
       </lastModified>
       <pruningSettings>
@@ -858,7 +860,7 @@ return;</undeployScript>
         <name>HL7 v2.x to FHIR Helper Functions</name>
         <revision>1</revision>
         <lastModified>
-          <time>1626715733383</time>
+          <time>1626762179957</time>
           <timezone>Etc/UTC</timezone>
         </lastModified>
         <description>General functions to help convert HL7 v2.x to FHIR resources.
@@ -879,16 +881,16 @@ the &quot;HL7 v2.x to FHIR Creation Functions&quot; code template library.</desc
             <name>Cleanup FHIR Patient</name>
             <revision>1</revision>
             <lastModified>
-              <time>1626715733782</time>
+              <time>1626762180448</time>
               <timezone>Etc/UTC</timezone>
             </lastModified>
             <contextSet>
               <delegate>
+                <contextType>SOURCE_RECEIVER</contextType>
+                <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
                 <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
                 <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_DISPATCHER</contextType>
-                <contextType>SOURCE_RECEIVER</contextType>
               </delegate>
             </contextSet>
             <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -974,16 +976,16 @@ function cleanupArray(parent, property, handleFunction) {
             <name>Combine Arrays</name>
             <revision>1</revision>
             <lastModified>
-              <time>1626715733729</time>
+              <time>1626762180390</time>
               <timezone>Etc/UTC</timezone>
             </lastModified>
             <contextSet>
               <delegate>
+                <contextType>SOURCE_RECEIVER</contextType>
+                <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
                 <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
                 <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_DISPATCHER</contextType>
-                <contextType>SOURCE_RECEIVER</contextType>
               </delegate>
             </contextSet>
             <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -1020,16 +1022,16 @@ function combineArrays(array1, array2) {
             <name>Consolidate Empty Properties</name>
             <revision>1</revision>
             <lastModified>
-              <time>1626715733861</time>
+              <time>1626762180545</time>
               <timezone>Etc/UTC</timezone>
             </lastModified>
             <contextSet>
               <delegate>
+                <contextType>SOURCE_RECEIVER</contextType>
+                <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
                 <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
                 <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_DISPATCHER</contextType>
-                <contextType>SOURCE_RECEIVER</contextType>
               </delegate>
             </contextSet>
             <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -1113,16 +1115,16 @@ function isValueEmpty(value) {
             <name>Convert Address Use</name>
             <revision>1</revision>
             <lastModified>
-              <time>1626715733590</time>
+              <time>1626762180236</time>
               <timezone>Etc/UTC</timezone>
             </lastModified>
             <contextSet>
               <delegate>
+                <contextType>SOURCE_RECEIVER</contextType>
+                <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
                 <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
                 <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_DISPATCHER</contextType>
-                <contextType>SOURCE_RECEIVER</contextType>
               </delegate>
             </contextSet>
             <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -1166,16 +1168,16 @@ function convertAddressUse(code) {
             <name>Convert Date</name>
             <revision>1</revision>
             <lastModified>
-              <time>1626715733396</time>
+              <time>1626762179986</time>
               <timezone>Etc/UTC</timezone>
             </lastModified>
             <contextSet>
               <delegate>
+                <contextType>SOURCE_RECEIVER</contextType>
+                <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
                 <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
                 <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_DISPATCHER</contextType>
-                <contextType>SOURCE_RECEIVER</contextType>
               </delegate>
             </contextSet>
             <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -1199,16 +1201,16 @@ function convertToFhirDate(date) {
             <name>Convert Gender</name>
             <revision>1</revision>
             <lastModified>
-              <time>1626715733680</time>
+              <time>1626762180316</time>
               <timezone>Etc/UTC</timezone>
             </lastModified>
             <contextSet>
               <delegate>
+                <contextType>SOURCE_RECEIVER</contextType>
+                <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
                 <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
                 <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_DISPATCHER</contextType>
-                <contextType>SOURCE_RECEIVER</contextType>
               </delegate>
             </contextSet>
             <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -1248,16 +1250,16 @@ function convertToFhirGender(code) {
             <name>Convert Timestamp</name>
             <revision>1</revision>
             <lastModified>
-              <time>1626715733509</time>
+              <time>1626762180136</time>
               <timezone>Etc/UTC</timezone>
             </lastModified>
             <contextSet>
               <delegate>
+                <contextType>SOURCE_RECEIVER</contextType>
+                <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
                 <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
                 <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_DISPATCHER</contextType>
-                <contextType>SOURCE_RECEIVER</contextType>
               </delegate>
             </contextSet>
             <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -1312,16 +1314,16 @@ function convertToFhirTimestamp(date) {
             <name>Convert Yes/No Indicator</name>
             <revision>1</revision>
             <lastModified>
-              <time>1626715733824</time>
+              <time>1626762180497</time>
               <timezone>Etc/UTC</timezone>
             </lastModified>
             <contextSet>
               <delegate>
+                <contextType>SOURCE_RECEIVER</contextType>
+                <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
                 <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
                 <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_DISPATCHER</contextType>
-                <contextType>SOURCE_RECEIVER</contextType>
               </delegate>
             </contextSet>
             <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
