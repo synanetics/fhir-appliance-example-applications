@@ -1,0 +1,1718 @@
+{
+	"info": {
+		"_postman_id": "4b495d64-17d8-41f3-a2d7-2d3ea8546a19",
+		"name": "ward-watcher",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "data-setup",
+			"item": [
+				{
+					"name": "Create Organization MUNGOS",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"organization_mungos_id\", \"78eef75f-0a88-4dfe-afcb-890e73c47e8b\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Organization\",\n    \"id\": \"{{organization_mungos_id}}\",\n    \"meta\": {\n        \"profile\": [\n            \"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n            \"value\": \"ZZ1\"\n        }\n    ],\n    \"active\": true,\n    \"name\": \"St. Mungos NHS Foundation Trust\",\n    \"telecom\": [\n        {\n            \"system\": \"phone\",\n            \"value\": \"0207 123 456\"\n        }\n    ],\n    \"address\": [\n        {\n            \"use\": \"work\",\n            \"line\": [\n                \"St. Mungos NHS Foundation Trust\",\n                \"Diagon Alley\"\n            ],\n            \"city\": \"London\",\n            \"postalCode\": \"W1A 1AA\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Organization",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Organization"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Organization GP Practice MALTON",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"organization_malton_id\", \"f5fa3c72-6191-4890-9498-e0b343d9af62\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Organization\",\n    \"id\": \"{{organization_malton_id}}\",\n    \"meta\": {\n        \"profile\": [\n            \"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n            \"value\": \"Y06601\"\n        }\n    ],\n    \"type\": [\n        {\n            \"coding\": [\n                {\n                    \"system\": \"http://hl7.org/fhir/organization-type\",\n                    \"code\": \"prov\",\n                    \"display\": \"Healthcare Provider\"\n                }\n            ]\n        }\n    ],\n    \"name\": \"Malton GP Practice\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Organization",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Organization"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Organization GP Practice SHAW LANE",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"organization_shawlane_id\", \"d12a5fbe-2775-4d2c-8e60-f8374793df8e\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Organization\",\n    \"id\": \"{{organization_shawlane_id}}\",\n    \"meta\": {\n        \"profile\": [\n            \"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n            \"value\": \"B86609\"\n        }\n    ],\n    \"active\": false,\n    \"name\": \"SHAW LANE SURGERY\",\n    \"telecom\": [\n        {\n            \"system\": \"phone\",\n            \"value\": \"01132 784914\"\n        }\n    ],\n    \"address\": [\n        {\n            \"line\": [\n                \"11 SHAW LANE\"\n            ],\n            \"city\": \"LEEDS\",\n            \"district\": \"WEST YORKSHIRE\",\n            \"postalCode\": \"LS6 4DH\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Organization",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Organization"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Organization GP Practice MARKET CROSS",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"organization_marketcross_id\", \"dd60f2bf-4a66-4744-b801-5b36eec10d67\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Organization\",\n    \"id\": \"{{organization_marketcross_id}}\",\n    \"meta\": {\n        \"profile\": [\n            \"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n            \"value\": \"B86627\"\n        }\n    ],\n    \"active\": false,\n    \"name\": \"MARKET CROSS SURGERY\",\n    \"telecom\": [\n        {\n            \"system\": \"phone\",\n            \"value\": \"0113 2822119\"\n        }\n    ],\n    \"address\": [\n        {\n            \"line\": [\n                \"103 COMMERCIAL STREET\",\n                \"ROTHWELL\"\n            ],\n            \"city\": \"LEEDS\",\n            \"district\": \"WEST YORKSHIRE\",\n            \"postalCode\": \"LS26 0QD\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Organization",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Organization"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Location MUNGOS MAIN HOSPITAL SITE",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"location_mungoshospital_id\", \"68a0e5ea-092f-4f0d-b879-953d657cb102\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Location\",\n    \"id\": \"{{location_mungoshospital_id}}\",\n    \"meta\": {\n        \"profile\": [\n            \"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"use\": \"usual\",\n            \"system\": \"https://fhir.nhs.uk/Id/ods-site-code\",\n            \"value\": \"ZZ101\"\n        }\n    ],\n    \"name\": \"St. Mungos General Hospital\",\n    \"type\": {\n        \"coding\": [\n            {\n                \"system\": \"http://hl7.org/fhir/v3/RoleCode\",\n                \"code\": \"HOSP\",\n                \"display\": \"Hospital\"\n            }\n        ]\n    },\n    \"physicalType\": {\n        \"coding\": [\n            {\n                \"system\": \"http://hl7.org/fhir/location-physical-type\",\n                \"code\": \"bu\",\n                \"display\": \"Building\"\n            }\n        ]\n    },\n    \"managingOrganization\": {\n        \"reference\": \"Organization/{{organization_mungos_id}}\",\n        \"display\": \"St. Mungos NHS Foundation Trust\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Location",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Location MUNGOS SURGERY CENTRE DEPARTMENT",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"location_mungossurgerycentre_id\", \"d1f71237-0f39-4196-bb7e-f05610e99eec\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Location\",\n    \"id\": \"{{location_mungossurgerycentre_id}}\",\n    \"meta\": {\n        \"profile\": [\n            \"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"use\": \"usual\",\n            \"system\": \"https://fhir.nhs.uk/Id/ods-site-code\",\n            \"value\": \"ZZ102\"\n        }\n    ],\n    \"name\": \"St. Mungos Surgery Centre\",\n    \"type\": {\n        \"coding\": [\n            {\n                \"system\": \"http://hl7.org/fhir/v3/RoleCode\",\n                \"code\": \"HOSP\",\n                \"display\": \"Hospital\"\n            }\n        ]\n    },\n    \"physicalType\": {\n        \"coding\": [\n            {\n                \"system\": \"http://hl7.org/fhir/location-physical-type\",\n                \"code\": \"bu\",\n                \"display\": \"Building\"\n            }\n        ]\n    },\n    \"managingOrganization\": {\n        \"reference\": \"Organization/{{organization_mungos_id}}\",\n        \"display\": \"St. Mungos NHS Foundation Trust\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Location",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Location OBSERVATION WARD",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"location_observationward_id\", \"42fa7dcb-1e8f-41c1-9202-629d6efc4222\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Location\",\n    \"id\": \"{{location_observationward_id}}\",\n    \"meta\": {\n        \"profile\": [\n            \"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"use\": \"usual\",\n            \"system\": \"https://fhir.stmungos.nhs.uk/Id/locations/wards\",\n            \"value\": \"OBS\"\n        }\n    ],\n    \"name\": \"Observation Ward\",\n    \"type\": {\n        \"coding\": [\n            {\n                \"system\": \"http://hl7.org/fhir/v3/RoleCode\",\n                \"code\": \"GACH\",\n                \"display\": \"General Acute Care Hospital\"\n            }\n        ]\n    },\n    \"physicalType\": {\n        \"coding\": [\n            {\n                \"system\": \"http://hl7.org/fhir/location-physical-type\",\n                \"code\": \"wi\",\n                \"display\": \"Wing\"\n            }\n        ]\n    },\n    \"managingOrganization\": {\n        \"reference\": \"Organization/{{organization_mungos_id}}\",\n        \"display\": \"St. Mungos NHS Foundation Trust\"\n    },\n    \"partOf\": {\n        \"reference\": \"Location/{{location_mungoshospital_id}}\",\n        \"display\": \"St. Mungos General Hospital\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Location",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Location OBSERVATION WARD BED 1",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"location_observationward_bed1_id\", \"61876087-26d0-433d-988a-fc4d09a80157\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Location\",\n    \"id\": \"{{location_observationward_bed1_id}}\",\n    \"meta\": {\n        \"profile\": [\n            \"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"use\": \"usual\",\n            \"system\": \"https://fhir.stmungos.nhs.uk/Id/locations/beds\",\n            \"value\": \"OBS-1\"\n        }\n    ],\n    \"name\": \"Observation Ward Bed 1\",\n    \"physicalType\": {\n        \"coding\": [\n            {\n                \"system\": \"http://hl7.org/fhir/location-physical-type\",\n                \"code\": \"bd\",\n                \"display\": \"Bed\"\n            }\n        ]\n    },\n    \"managingOrganization\": {\n        \"reference\": \"Organization/{{organization_mungos_id}}\",\n        \"display\": \"St. Mungos NHS Foundation Trust\"\n    },\n    \"partOf\": {\n        \"reference\": \"Location/{{location_observationward_id}}\",\n        \"display\": \"Observation Ward\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Location",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Location OBSERVATION WARD BED 2",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"location_observationward_bed2_id\", \"67e5d166-835f-43ae-b485-52126d753e85\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Location\",\n    \"id\": \"{{location_observationward_bed2_id}}\",\n    \"meta\": {\n        \"profile\": [\n            \"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"use\": \"usual\",\n            \"system\": \"https://fhir.stmungos.nhs.uk/Id/locations\",\n            \"value\": \"OBS-2\"\n        }\n    ],\n    \"name\": \"Observation Ward Bed 2\",\n    \"physicalType\": {\n        \"coding\": [\n            {\n                \"system\": \"http://hl7.org/fhir/location-physical-type\",\n                \"code\": \"bd\",\n                \"display\": \"Bed\"\n            }\n        ]\n    },\n    \"managingOrganization\": {\n        \"reference\": \"Organization/{{organization_mungos_id}}\",\n        \"display\": \"St. Mungos NHS Foundation Trust\"\n    },\n    \"partOf\": {\n        \"reference\": \"Location/{{location_observationward_id}}\",\n        \"display\": \"Observation Ward\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Location",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Location OBSERVATION WARD BED 3",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"location_observationward_bed3_id\", \"c810f830-23d4-4948-946e-61b1bf39f483\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Location\",\n    \"id\": \"{{location_observationward_bed3_id}}\",\n    \"meta\": {\n        \"profile\": [\n            \"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"use\": \"usual\",\n            \"system\": \"https://fhir.stmungos.nhs.uk/Id/locations\",\n            \"value\": \"OBS-3\"\n        }\n    ],\n    \"name\": \"Observation Ward Bed 3\",\n    \"physicalType\": {\n        \"coding\": [\n            {\n                \"system\": \"http://hl7.org/fhir/location-physical-type\",\n                \"code\": \"bd\",\n                \"display\": \"Bed\"\n            }\n        ]\n    },\n    \"managingOrganization\": {\n        \"reference\": \"Organization/{{organization_mungos_id}}\",\n        \"display\": \"St. Mungos NHS Foundation Trust\"\n    },\n    \"partOf\": {\n        \"reference\": \"Location/{{location_observationward_id}}\",\n        \"display\": \"Observation Ward\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Location",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Location EMERGENCY ADMISSION WARD",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"location_emergencyadmissionward_id\", \"22765450-9b0d-42b8-b7bd-f3324aa4153b\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Location\",\n    \"id\": \"{{location_emergencyadmissionward_id}}\",\n    \"meta\": {\n        \"profile\": [\n            \"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"use\": \"usual\",\n            \"system\": \"https://fhir.stmungos.nhs.uk/Id/locations/wards\",\n            \"value\": \"EMER\"\n        }\n    ],\n    \"name\": \"Emergency Admissions Ward\",\n    \"type\": {\n        \"coding\": [\n            {\n                \"system\": \"http://hl7.org/fhir/v3/RoleCode\",\n                \"code\": \"GACH\",\n                \"display\": \"General Acute Care Hospital\"\n            }\n        ]\n    },\n    \"physicalType\": {\n        \"coding\": [\n            {\n                \"system\": \"http://hl7.org/fhir/location-physical-type\",\n                \"code\": \"wi\",\n                \"display\": \"Wing\"\n            }\n        ]\n    },\n    \"managingOrganization\": {\n        \"reference\": \"Organization/{{organization_mungos_id}}\",\n        \"display\": \"St. Mungos NHS Foundation Trust\"\n    },\n    \"partOf\": {\n        \"reference\": \"Location/{{location_mungoshospital_id}}\",\n        \"display\": \"St. Mungos General Hospital\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Location",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Location EMERGENCY ADMISSION WARD BED 1",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"location_emergency_bed1_id\", \"0dd7c671-fe26-4b83-aaf8-8b7db7a68e7f\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Location\",\n    \"id\": \"{{location_emergency_bed1_id}}\",\n    \"meta\": {\n        \"profile\": [\n            \"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"use\": \"usual\",\n            \"system\": \"https://fhir.stmungos.nhs.uk/Id/locations/beds\",\n            \"value\": \"EMER-1\"\n        }\n    ],\n    \"name\": \"Emergency Admission Ward Bed 1\",\n    \"physicalType\": {\n        \"coding\": [\n            {\n                \"system\": \"http://hl7.org/fhir/location-physical-type\",\n                \"code\": \"bd\",\n                \"display\": \"Bed\"\n            }\n        ]\n    },\n    \"managingOrganization\": {\n        \"reference\": \"Organization/{{organization_mungos_id}}\",\n        \"display\": \"St. Mungos NHS Foundation Trust\"\n    },\n    \"partOf\": {\n        \"reference\": \"Location/{{location_emergencyadmissionward_id}}\",\n        \"display\": \"Emergency Admission Ward\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Location",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Location EMERGENCY ADMISSION WARD BED 2",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"location_emergency_bed2_id\", \"da817951-0db7-4a05-b79e-da0f4e5c5b42\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Location\",\n    \"id\": \"{{location_emergency_bed2_id}}\",\n    \"meta\": {\n        \"profile\": [\n            \"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"use\": \"usual\",\n            \"system\": \"https://fhir.stmungos.nhs.uk/Id/locations/beds\",\n            \"value\": \"EMER-2\"\n        }\n    ],\n    \"name\": \"Emergency Admission Ward Bed 2\",\n    \"physicalType\": {\n        \"coding\": [\n            {\n                \"system\": \"http://hl7.org/fhir/location-physical-type\",\n                \"code\": \"bd\",\n                \"display\": \"Bed\"\n            }\n        ]\n    },\n    \"managingOrganization\": {\n        \"reference\": \"Organization/{{organization_mungos_id}}\",\n        \"display\": \"St. Mungos NHS Foundation Trust\"\n    },\n    \"partOf\": {\n        \"reference\": \"Location/{{location_emergencyadmissionward_id}}\",\n        \"display\": \"Emergency Admission Ward\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Location",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Location GENERAL MEDICAL WARD",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"location_generalmedicalward_id\", \"ca1ba62a-d707-457e-b747-26e4b0197611\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Location\",\n    \"id\": \"{{location_generalmedicalward_id}}\",\n    \"meta\": {\n        \"profile\": [\n            \"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"use\": \"usual\",\n            \"system\": \"https://fhir.stmungos.nhs.uk/Id/locations/wards\",\n            \"value\": \"GEN\"\n        }\n    ],\n    \"name\": \"General Medical Ward\",\n    \"type\": {\n        \"coding\": [\n            {\n                \"system\": \"http://hl7.org/fhir/v3/RoleCode\",\n                \"code\": \"GACH\",\n                \"display\": \"General Acute Care Hospital\"\n            }\n        ]\n    },\n    \"physicalType\": {\n        \"coding\": [\n            {\n                \"system\": \"http://hl7.org/fhir/location-physical-type\",\n                \"code\": \"wi\",\n                \"display\": \"Wing\"\n            }\n        ]\n    },\n    \"managingOrganization\": {\n        \"reference\": \"Organization/{{organization_mungos_id}}\",\n        \"display\": \"St. Mungos NHS Foundation Trust\"\n    },\n    \"partOf\": {\n        \"reference\": \"Location/{{location_mungoshospital_id}}\",\n        \"display\": \"St. Mungos General Hospital\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Location",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Location GEN MEDICAL WARD BED 1",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"location_generalmedical_bed1_id\", \"f55f0d84-8da4-4b26-a9ae-d4285fd9b0d1\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Location\",\n    \"id\": \"{{location_generalmedical_bed1_id}}\",\n    \"meta\": {\n        \"profile\": [\n            \"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"use\": \"usual\",\n            \"system\": \"https://fhir.stmungos.nhs.uk/Id/locations/beds\",\n            \"value\": \"GEN-1\"\n        }\n    ],\n    \"name\": \"General Medical Ward Bed 1\",\n    \"physicalType\": {\n        \"coding\": [\n            {\n                \"system\": \"http://hl7.org/fhir/location-physical-type\",\n                \"code\": \"bd\",\n                \"display\": \"Bed\"\n            }\n        ]\n    },\n    \"managingOrganization\": {\n        \"reference\": \"Organization/{{organization_mungos_id}}\",\n        \"display\": \"St. Mungos NHS Foundation Trust\"\n    },\n    \"partOf\": {\n        \"reference\": \"Location/{{location_generalmedicalward_id}}\",\n        \"display\": \"General Medical Ward\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Location",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Location GEN MEDICAL WARD BED 2",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"location_generalmedical_bed2_id\", \"389caea5-51fc-4223-a11a-4fb185e3a0b8\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Location\",\n    \"id\": \"{{location_generalmedical_bed2_id}}\",\n    \"meta\": {\n        \"profile\": [\n            \"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"use\": \"usual\",\n            \"system\": \"https://fhir.stmungos.nhs.uk/Id/locations/beds\",\n            \"value\": \"GEN-2\"\n        }\n    ],\n    \"name\": \"General Medical Ward Bed 2\",\n    \"physicalType\": {\n        \"coding\": [\n            {\n                \"system\": \"http://hl7.org/fhir/location-physical-type\",\n                \"code\": \"bd\",\n                \"display\": \"Bed\"\n            }\n        ]\n    },\n    \"managingOrganization\": {\n        \"reference\": \"Organization/{{organization_mungos_id}}\",\n        \"display\": \"St. Mungos NHS Foundation Trust\"\n    },\n    \"partOf\": {\n        \"reference\": \"Location/{{location_generalmedicalward_id}}\",\n        \"display\": \"General Medical Ward\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Location",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Location SURGICAL WARD",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"location_surgicalward_id\", \"748ef36a-276f-4077-94ed-5c6532a49023\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Location\",\n    \"id\": \"{{location_surgicalward_id}}\",\n    \"meta\": {\n        \"profile\": [\n            \"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"use\": \"usual\",\n            \"system\": \"https://fhir.stmungos.nhs.uk/Id/locations/wards\",\n            \"value\": \"SURG\"\n        }\n    ],\n    \"name\": \"Surgical Ward\",\n    \"type\": {\n        \"coding\": [\n            {\n                \"system\": \"http://hl7.org/fhir/v3/RoleCode\",\n                \"code\": \"GACH\",\n                \"display\": \"General Acute Care Hospital\"\n            }\n        ]\n    },\n    \"physicalType\": {\n        \"coding\": [\n            {\n                \"system\": \"http://hl7.org/fhir/location-physical-type\",\n                \"code\": \"wi\",\n                \"display\": \"Wing\"\n            }\n        ]\n    },\n    \"managingOrganization\": {\n        \"reference\": \"Organization/{{organization_mungos_id}}\",\n        \"display\": \"St. Mungos NHS Foundation Trust\"\n    },\n    \"partOf\": {\n        \"reference\": \"Location/{{location_mungossurgerycentre_id}}\",\n        \"display\": \"St. Mungos Surgery Centre\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Location",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Location SURGICAL WARD BED 1",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"location_surgical_bed1_id\", \"923e8c4e-74c0-4369-ac6a-35bd165847a5\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Location\",\n    \"id\": \"{{location_surgical_bed1_id}}\",\n    \"meta\": {\n        \"profile\": [\n            \"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"use\": \"usual\",\n            \"system\": \"https://fhir.stmungos.nhs.uk/Id/locations/beds\",\n            \"value\": \"SURG-1\"\n        }\n    ],\n    \"name\": \"Surgical Ward Bed 1\",\n    \"physicalType\": {\n        \"coding\": [\n            {\n                \"system\": \"http://hl7.org/fhir/location-physical-type\",\n                \"code\": \"bd\",\n                \"display\": \"Bed\"\n            }\n        ]\n    },\n    \"managingOrganization\": {\n        \"reference\": \"Organization/{{organization_mungos_id}}\",\n        \"display\": \"St. Mungos NHS Foundation Trust\"\n    },\n    \"partOf\": {\n        \"reference\": \"Location/{{location_surgicalward_id}}\",\n        \"display\": \"Surgical Ward\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Location",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Patient SHIPPERBOTTOM",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"patient_shipperbottom_id\", \"b1cf868a-cfe0-4c7b-96b0-868f29dcc891\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Patient\",\n    \"meta\": {\n        \"profile\": [\n            \"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1\"\n        ]\n    },\n    \"active\": true,\n    \"id\": \"{{patient_shipperbottom_id}}\",\n    \"identifier\": [\n        {\n            \"extension\": [\n                {\n                    \"url\": \"https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-NHSNumberVerificationStatus-1\",\n                    \"valueCodeableConcept\": {\n                        \"coding\": [\n                            {\n                                \"system\": \"https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1\",\n                                \"code\": \"01\",\n                                \"display\": \"Number present and verified\"\n                            }\n                        ]\n                    }\n                }\n            ],\n            \"use\": \"official\",\n            \"system\": \"https://fhir.nhs.uk/Id/nhs-number\",\n            \"value\": \"9449306621\"\n        }\n    ],\n    \"name\": [\n        {\n            \"prefix\": [\n                \"MS\"\n            ],\n            \"given\": [\n                \"BERYL\"\n            ],\n            \"family\": \"SHIPPERBOTTOM\",\n            \"use\": \"official\"\n        }\n    ],\n    \"address\": [\n        {\n            \"use\": \"home\",\n            \"line\": [\n                \"BROGA\",\n                \"FARM LANE\",\n                \"\"\n            ],\n            \"city\": \"ASHTEAD\",\n            \"district\": \"\",\n            \"postalCode\": \"KT21 1LJ\"\n        }\n    ],\n    \"telecom\": [\n        {\n            \"system\": \"phone\",\n            \"use\": \"home\",\n            \"value\": \"0113554466\",\n            \"period\": {\n                \"start\": \"2020-07-01\"\n            }\n        },\n        {\n            \"system\": \"email\",\n            \"use\": \"home\",\n            \"value\": \"a@b.com\",\n            \"period\": {\n                \"start\": \"2020-07-01\"\n            }\n        }\n    ],\n    \"birthDate\": \"2011-05-09\",\n    \"gender\": \"female\",\n    \"generalPractitioner\": [\n        {\n            \"reference\": \"Organization/{{organization_malton_id}}\",\n            \"identifier\": {\n                \"use\": \"official\",\n                \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n                \"value\": \"Y06601\"\n            },\n            \"display\": \"Malton GP Practice\"\n        }\n    ],\n    \"managingOrganization\": {\n        \"reference\": \"Organization/{{organization_mungos_id}}\",\n        \"display\": \"St. Mungos NHS Foundation Trust\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Patient",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Patient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Practitioner GREYJOY",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"practitioner_greyjoy_id\", \"05f14b7e-94aa-4b52-a4d4-d372da335c50\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Practitioner\",\n    \"id\":\"{{practitioner_greyjoy_id}}\",\n    \"meta\": {\n        \"profile\": [\n            \"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"system\": \"https://fhir.nhs.uk/Id/sds-user-id\",\n            \"value\": \"G8999991\"\n        }\n    ],\n    \"name\": [\n        {\n            \"family\": \"Greyjoy\",\n            \"given\": [\n                \"Yara\"\n            ],\n            \"prefix\": [\n                \"Dr.\"\n            ]\n        }\n    ],\n    \"telecom\": [\n        {\n            \"system\": \"email\",\n            \"value\": \"abhatia@nhs.skynet\",\n            \"use\": \"work\"\n        },\n        {\n            \"system\": \"phone\",\n            \"value\": \"0115 9737320\",\n            \"use\": \"work\"\n        }\n    ],\n    \"address\": [\n        {\n            \"line\": [\n                \"Regent Street\",\n                \"Long Eaton\"\n            ],\n            \"city\": \"Nottingham\",\n            \"district\": \"Derbyshire\",\n            \"postalCode\": \"NG10 1QQ\"\n        }\n    ],\n    \"gender\": \"female\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Practitioner",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Practitioner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Encounter SHIPPERBOTTOM",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"encounter_shipperbottom_id\", \"b9f6159e-5983-43f7-9a1d-e8377d11fb7f\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Encounter\",\n    \"id\": \"{{encounter_shipperbottom_id}}\",\n    \"meta\": {\n        \"profile\": [\n            \"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"system\": \"https://stmungos.nhs.uk/Id/encounter-identifier\",\n            \"value\": \"ZZ1001\"\n        }\n    ],\n    \"status\": \"in-progress\",\n    \"statusHistory\": [\n        {\n            \"status\": \"in-progress\",\n            \"period\": {\n                \"start\": \"2021-07-08T11:00:00+01:00\"\n            }\n        }\n    ],\n    \"class\": {\n        \"system\": \"http://hl7.org/fhir/v3/ActCode\",\n        \"code\": \"EMER\",\n        \"display\": \"emergency attendance\"\n    },\n    \"type\": [\n        {\n            \"coding\": [\n                {\n                    \"system\": \"http://hl7.org/fhir/encounter-type\",\n                    \"code\": \"320\"\n                }\n            ],\n            \"text\": \"Cardiology Service\"\n        }\n    ],\n    \"subject\": {\n        \"reference\": \"Patient/{{patient_shipperbottom_id}}\",\n        \"display\": \"Mrs Beryl Shipperbottom\"\n    },\n    \"participant\": [\n        {\n            \"type\": [\n                {\n                    \"coding\": [\n                        {\n                            \"system\": \"http://hl7.org/fhir/v3/ParticipationType\",\n                            \"code\": \"ATND\",\n                            \"display\": \"attender\"\n                        }\n                    ]\n                }\n            ],\n            \"individual\": {\n                \"reference\": \"Practitioner/{{practitioner_greyjoy_id}}\",\n                \"display\": \"Dr. Yara Greyjoy\"\n            }\n        }\n    ],\n    \"period\": {\n        \"start\": \"2021-07-08T11:00:00+01:00\"\n    },\n    \"reason\": [\n        {\n            \"coding\": [\n                {\n                    \"system\": \"http://snomed.info/sct\",\n                    \"code\": \"4115\",\n                    \"display\": \"Wound : bite\"\n                }\n            ]\n        }\n    ],\n    \"hospitalization\": {\n        \"admitSource\": {\n            \"coding\": [\n                {\n                    \"system\": \"https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1\",\n                    \"code\": \"507291000000100\"\n                }\n            ],\n            \"text\": \"Self / family / friends / education / work colleague\"\n        }\n    },\n    \"location\": [\n         {\n            \"location\": {\n                \"reference\": \"Location/{{location_mungoshospital_id}}\",\n                \"display\": \"St. Mungos General Hospital\"\n            },\n            \"status\": \"active\"\n        },\n        {\n            \"location\": {\n                \"reference\": \"Location/{{location_observationward_id}}\",\n                \"display\": \"Observation Ward\"\n            },\n            \"status\": \"active\"\n        },\n        {\n            \"location\": {\n                \"reference\": \"Location/{{location_observationward_bed1_id}}\",\n                \"display\": \"Observation Ward Bed 1\"\n            },\n            \"status\": \"active\"\n        }\n    ],\n    \"serviceProvider\": {\n        \"reference\": \"Organization/{{organization_mungos_id}}\",\n        \"display\": \"St. Mungos NHS Foundation Trust\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Encounter",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Encounter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Patient MELEAH",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"patient_meleah_id\", \"7dcd1f52-23b3-410f-aebb-7076bc4b592f\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Patient\",\n    \"meta\": {\n        \"profile\": [\n            \"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1\"\n        ]\n    },\n    \"active\": true,\n    \"id\": \"{{patient_meleah_id}}\",\n    \"identifier\": [\n        {\n            \"extension\": [\n                {\n                    \"url\": \"https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-NHSNumberVerificationStatus-1\",\n                    \"valueCodeableConcept\": {\n                        \"coding\": [\n                            {\n                                \"system\": \"https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1\",\n                                \"code\": \"01\",\n                                \"display\": \"Number present and verified\"\n                            }\n                        ]\n                    }\n                }\n            ],\n            \"use\": \"official\",\n            \"system\": \"https://fhir.nhs.uk/Id/nhs-number\",\n            \"value\": \"9449310378\"\n        }\n    ],\n    \"name\": [\n        {\n            \"prefix\": [\n                \"\"\n            ],\n            \"given\": [\n                \"MALEAH\"\n            ],\n            \"family\": \"GEELAN\",\n            \"use\": \"official\"\n        }\n    ],\n    \"address\": [\n        {\n            \"use\": \"home\",\n            \"line\": [\n                \"CUILLINS\",\n                \"DORKING ROAD\",\n                \"WALTON ON THE HILL\"\n            ],\n            \"city\": \"TADWORTH\",\n            \"district\": \"\",\n            \"postalCode\": \"KT20 7RH\"\n        }\n    ],\n    \"telecom\": [\n        {\n            \"system\": \"phone\",\n            \"use\": \"home\",\n            \"value\": \"0113554466\",\n            \"period\": {\n                \"start\": \"2020-07-01\"\n            }\n        },\n        {\n            \"system\": \"email\",\n            \"use\": \"home\",\n            \"value\": \"a@b.com\",\n            \"period\": {\n                \"start\": \"2020-07-01\"\n            }\n        }\n    ],\n    \"birthDate\": \"1982-05-25\",\n    \"gender\": \"unknown\",\n    \"generalPractitioner\": [\n        {\n            \"reference\": \"Organization/{{organization_shawlane_id}}\",\n            \"identifier\": {\n                \"use\": \"official\",\n                \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n                \"value\": \"B86609\"\n            },\n            \"display\": \"Shaw Lane Surgery\"\n        }\n    ],\n    \"managingOrganization\": {\n        \"reference\": \"Organization/{{organization_mungos_id}}\",\n        \"display\": \"St. Mungos NHS Foundation Trust\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Patient",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Patient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Practitioner LANNISTER",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"practitioner_lannister_id\", \"09b405f6-0fd9-4614-9f5d-ec3a9dbb183f\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Practitioner\",\n    \"meta\": {\n        \"profile\": [\n            \"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"system\": \"https://fhir.nhs.uk/Id/sds-user-id\",\n            \"value\": \"G8999992\"\n        }\n    ],\n    \"name\": [\n        {\n            \"family\": \"Lannister\",\n            \"given\": [\n                \"Tyrion\"\n            ],\n            \"prefix\": [\n                \"Mr.\"\n            ]\n        }\n    ],\n    \"telecom\": [\n        {\n            \"system\": \"email\",\n            \"value\": \"abhatia@nhs.skynet\",\n            \"use\": \"work\"\n        },\n        {\n            \"system\": \"phone\",\n            \"value\": \"0115 9737320\",\n            \"use\": \"work\"\n        }\n    ],\n    \"address\": [\n        {\n            \"line\": [\n                \"Regent Street\",\n                \"Long Eaton\"\n            ],\n            \"city\": \"Nottingham\",\n            \"district\": \"Derbyshire\",\n            \"postalCode\": \"NG10 1QQ\"\n        }\n    ],\n    \"gender\": \"male\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Practitioner",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Practitioner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Encounter MELEAH",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"encounter_meleah_id\", \"1ccc8670-0066-43b8-90ad-206241b27966\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Encounter\",\n    \"id\": \"{{encounter_meleah_id}}\",\n    \"meta\": {\n        \"profile\": [\n            \"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"system\": \"https://stmungos.nhs.uk/Id/encounter-identifier\",\n            \"value\": \"ZZ1002\"\n        }\n    ],\n    \"status\": \"in-progress\",\n    \"statusHistory\": [\n        {\n            \"status\": \"in-progress\",\n            \"period\": {\n                \"start\": \"2021-07-08T11:00:00+01:00\"\n            }\n        }\n    ],\n    \"class\": {\n        \"system\": \"http://hl7.org/fhir/v3/ActCode\",\n        \"code\": \"IMP\",\n        \"display\": \"inpatient encounter\"\n    },\n    \"type\": [\n        {\n            \"coding\": [\n                {\n                    \"system\": \"http://hl7.org/fhir/encounter-type\",\n                    \"code\": \"110\"\n                }\n            ],\n            \"text\": \"Trauma and Orthopaedic Service\"\n        }\n    ],\n    \"subject\": {\n        \"reference\": \"Patient/{{patient_meleah_id}}\",\n        \"display\": \"Maleah Geelan\"\n    },\n    \"participant\": [\n        {\n            \"type\": [\n                {\n                    \"coding\": [\n                        {\n                            \"system\": \"http://hl7.org/fhir/v3/ParticipationType\",\n                            \"code\": \"ATND\",\n                            \"display\": \"attender\"\n                        }\n                    ]\n                }\n            ],\n            \"individual\": {\n                \"reference\": \"Practitioner/{{practitioner_lannister_id}}\",\n                \"display\": \"Mr. Tyrion Lannister\"\n            }\n        }\n    ],\n    \"period\": {\n        \"start\": \"2021-07-08T11:00:00+01:00\"\n    },\n    \"hospitalization\": {\n        \"admitSource\": {\n            \"coding\": [\n                {\n                    \"system\": \"https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1\",\n                    \"code\": \"19\"\n                }\n            ],\n            \"text\": \"Usual place of residence\"\n        }\n    },\n    \"location\": [\n        {\n            \"location\": {\n                \"reference\": \"Location/{{location_mungossurgerycentre_id}}\",\n                \"display\": \"St. Mungos Surgery Centre\"\n            },\n            \"status\": \"active\"\n        },\n        {\n            \"location\": {\n                \"reference\": \"Location/{{location_surgicalward_id}}\",\n                \"display\": \"Surgical Ward\"\n            },\n            \"status\": \"active\"\n        },\n        {\n            \"location\": {\n                \"reference\": \"Location/{{location_surgical_bed1_id}}\",\n                \"display\": \"Surgical Ward Bed 1\"\n            },\n            \"status\": \"active\"\n        }\n    ],\n    \"serviceProvider\": {\n        \"reference\": \"Organization/{{organization_mungos_id}}\",\n        \"display\": \"St. Mungos NHS Foundation Trust\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Encounter",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Encounter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Patient CHISLETT",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"patient_chislett_id\", \"88da0324-049f-4de2-a177-c07e06e3c575\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Patient\",\n    \"meta\": {\n        \"profile\": [\n            \"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1\"\n        ]\n    },\n    \"active\": true,\n    \"id\": \"{{patient_chislett_id}}\",\n    \"identifier\": [\n        {\n            \"extension\": [\n                {\n                    \"url\": \"https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-NHSNumberVerificationStatus-1\",\n                    \"valueCodeableConcept\": {\n                        \"coding\": [\n                            {\n                                \"system\": \"https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1\",\n                                \"code\": \"01\",\n                                \"display\": \"Number present and verified\"\n                            }\n                        ]\n                    }\n                }\n            ],\n            \"use\": \"official\",\n            \"system\": \"https://fhir.nhs.uk/Id/nhs-number\",\n            \"value\": \"9449305552\"\n        }\n    ],\n    \"name\": [\n        {\n            \"prefix\": [\n                \"\"\n            ],\n            \"given\": [\n                \"OCTAVIA\"\n            ],\n            \"family\": \"CHISLETT\",\n            \"use\": \"official\"\n        }\n    ],\n    \"address\": [\n        {\n            \"use\": \"home\",\n            \"line\": [\n                \"1 RAVENSFIELD GARDENS\"\n            ],\n            \"city\": \"EPSOM\",\n            \"district\": \"SURREY\",\n            \"postalCode\": \"KT19 0ST\"\n        }\n    ],\n    \"telecom\": [\n        {\n            \"system\": \"phone\",\n            \"use\": \"home\",\n            \"value\": \"0113554466\",\n            \"period\": {\n                \"start\": \"2020-07-01\"\n            }\n        },\n        {\n            \"system\": \"email\",\n            \"use\": \"home\",\n            \"value\": \"a@b.com\",\n            \"period\": {\n                \"start\": \"2020-07-01\"\n            }\n        }\n    ],\n    \"birthDate\": \"2008-09-20\",\n    \"gender\": \"female\",\n    \"generalPractitioner\": [\n        {\n            \"reference\": \"Organization/{{organization_marketcross_id}}\",\n            \"identifier\": {\n                \"use\": \"official\",\n                \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n                \"value\": \"B86627\"\n            },\n            \"display\": \"Market Cross Surgery\"\n        }\n    ],\n    \"managingOrganization\": {\n        \"reference\": \"Organization/{{organization_mungos_id}}\",\n        \"display\": \"St. Mungos NHS Foundation Trust\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Patient",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Patient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Patient NUTTON",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"patient_nutton_id\", \"cb27c18c-b298-4b2a-818b-60d19f055aea\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Patient\",\n    \"id\": \"{{patient_nutton_id}}\",\n    \"identifier\": [\n        {\n            \"extension\": [\n                {\n                    \"url\": \"https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-NHSNumberVerificationStatus-1\",\n                    \"valueCodeableConcept\": {\n                        \"coding\": [\n                            {\n                                \"system\": \"https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1\",\n                                \"code\": \"01\",\n                                \"display\": \"Number present and verified\"\n                            }\n                        ]\n                    }\n                }\n            ],\n            \"system\": \"https://fhir.nhs.uk/Id/nhs-number\",\n            \"value\": \"9449306540\"\n        }\n    ],\n    \"active\": true,\n    \"name\": [\n        {\n            \"use\": \"official\",\n            \"family\": \"Nutton\",\n            \"given\": [\n                \"Everitt\"\n            ],\n            \"prefix\": [\n                \"Mr\"\n            ]\n        }\n    ],\n    \"telecom\": [\n        {\n            \"system\": \"phone\",\n            \"value\": \"0208 412 8867\",\n            \"use\": \"home\"\n        }\n    ],\n    \"gender\": \"male\",\n    \"birthDate\": \"2001-09-29\",\n    \"address\": [\n        {\n            \"use\": \"home\",\n            \"type\": \"physical\",\n            \"line\": [\n                \"Oak House\",\n                \"Boxhill Road\",\n                \"Tadworth\"\n            ],\n            \"city\": \"Surrey\",\n            \"postalCode\": \"KT20 7PS\"\n        }\n    ],\n    \"maritalStatus\": {\n        \"coding\": [\n            {\n                \"system\": \"http://hl7.org/fhir/v3/MaritalStatus\",\n                \"code\": \"S\",\n                \"display\": \"Never Married\"\n            }\n        ]\n    },\n    \"generalPractitioner\": [\n        {\n            \"reference\": \"Organization/{{organization_malton_id}}\",\n            \"identifier\": {\n                \"use\": \"official\",\n                \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n                \"value\": \"Y06601\"\n            },\n            \"display\": \"Malton GP Practice\"\n        }\n    ],\n    \"managingOrganization\": {\n        \"reference\": \"Organization/{{organization_mungos_id}}\",\n        \"display\": \"St. Mungos NHS Foundation Trust\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Patient",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Patient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Patient WILTON",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"patient_wilton_id\", \"1f6ddea4-cf85-4b8f-bdca-739d645b532a\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Patient\",\n    \"id\": \"{{patient_wilton_id}}\",\n    \"identifier\": [\n        {\n            \"extension\": [\n                {\n                    \"url\": \"https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-NHSNumberVerificationStatus-1\",\n                    \"valueCodeableConcept\": {\n                        \"coding\": [\n                            {\n                                \"system\": \"https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1\",\n                                \"code\": \"01\",\n                                \"display\": \"Number present and verified\"\n                            }\n                        ]\n                    }\n                }\n            ],\n            \"system\": \"https://fhir.nhs.uk/Id/nhs-number\",\n            \"value\": \"9449306524\"\n        }\n    ],\n    \"active\": true,\n    \"name\": [\n        {\n            \"use\": \"official\",\n            \"family\": \"Hennon\",\n            \"given\": [\n                \"Wilton\"\n            ],\n            \"prefix\": [\n                \"Mr\"\n            ]\n        }\n    ],\n    \"telecom\": [\n        {\n            \"system\": \"phone\",\n            \"value\": \"0208 412 8867\",\n            \"use\": \"home\"\n        }\n    ],\n    \"gender\": \"male\",\n    \"birthDate\": \"2010-10-20\",\n    \"address\": [\n        {\n            \"use\": \"home\",\n            \"type\": \"physical\",\n            \"line\": [\n                \"Hunterscombe\",\n                \"Boxhill Road\"\n            ],\n            \"city\": \"Tadworth\",\n            \"postalCode\": \"KT20 7PF\"\n        }\n    ],\n    \"maritalStatus\": {\n        \"coding\": [\n            {\n                \"system\": \"http://hl7.org/fhir/v3/MaritalStatus\",\n                \"code\": \"S\",\n                \"display\": \"Never Married\"\n            }\n        ]\n    },\n    \"generalPractitioner\": [\n        {\n            \"reference\": \"Organization/{{organization_marketcross_id}}\",\n            \"identifier\": {\n                \"use\": \"official\",\n                \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n                \"value\": \"B86627\"\n            },\n            \"display\": \"Market Cross Surgery\"\n        }\n    ],\n    \"managingOrganization\": {\n        \"reference\": \"Organization/{{organization_mungos_id}}\",\n        \"display\": \"St. Mungos NHS Foundation Trust\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Patient",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Patient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Practitioner STARK",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"practitioner_stark_id\", \"5ff485d9-b544-4adf-8db0-0ae7b0ab2dad\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Practitioner\",\n    \"id\":\"{{practitioner_stark_id}}\",\n    \"meta\": {\n        \"profile\": [\n            \"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"system\": \"https://fhir.nhs.uk/Id/sds-user-id\",\n            \"value\": \"G8999993\"\n        }\n    ],\n    \"name\": [\n        {\n            \"family\": \"Stark\",\n            \"given\": [\n                \"Arya\"\n            ],\n            \"prefix\": [\n                \"Dr.\"\n            ]\n        }\n    ],\n    \"telecom\": [\n        {\n            \"system\": \"email\",\n            \"value\": \"abhatia@nhs.skynet\",\n            \"use\": \"work\"\n        },\n        {\n            \"system\": \"phone\",\n            \"value\": \"0115 9737320\",\n            \"use\": \"work\"\n        }\n    ],\n    \"address\": [\n        {\n            \"line\": [\n                \"Regent Street\",\n                \"Long Eaton\"\n            ],\n            \"city\": \"Nottingham\",\n            \"district\": \"Derbyshire\",\n            \"postalCode\": \"NG10 1QQ\"\n        }\n    ],\n    \"gender\": \"female\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Practitioner",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Practitioner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Encounter WILTON",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"encounter_wilton_id\", \"1f6ddea4-cf85-4b8f-bdca-739d645b532a\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Encounter\",\n    \"id\": \"{{encounter_wilton_id}}\",\n    \"meta\": {\n        \"profile\": [\n            \"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1\"\n        ]\n    },\n    \"identifier\": [\n        {\n            \"system\": \"https://stmungos.nhs.uk/Id/encounter-identifier\",\n            \"value\": \"ZZ1003\"\n        }\n    ],\n    \"status\": \"in-progress\",\n    \"statusHistory\": [\n        {\n            \"status\": \"in-progress\",\n            \"period\": {\n                \"start\": \"2021-07-08T11:00:00+01:00\"\n            }\n        }\n    ],\n    \"class\": {\n        \"system\": \"http://hl7.org/fhir/v3/ActCode\",\n        \"code\": \"EMER\",\n        \"display\": \"emergency attendance\"\n    },\n    \"type\": [\n        {\n            \"coding\": [\n                {\n                    \"system\": \"http://hl7.org/fhir/encounter-type\",\n                    \"code\": \"301\"\n                }\n            ],\n            \"text\": \"Gastroenterology Service\"\n        }\n    ],\n    \"subject\": {\n        \"reference\": \"Patient/{{patient_wilton_id}}\",\n        \"display\": \"Mr Wilton Hennon\"\n    },\n\n    \"participant\": [\n        {\n            \"type\": [\n                {\n                    \"coding\": [\n                        {\n                            \"system\": \"http://hl7.org/fhir/v3/ParticipationType\",\n                            \"code\": \"ATND\",\n                            \"display\": \"attender\"\n                        }\n                    ]\n                }\n            ],\n            \"individual\": {\n                \"reference\": \"Practitioner/{{practitioner_stark_id}}\",\n                \"display\": \"Dr. Arya Stark\"\n            }\n        }\n    ],\n    \"period\": {\n        \"start\": \"2021-07-08T11:00:00+01:00\"\n    },\n    \"reason\": [\n        {\n            \"coding\": [\n                {\n                    \"system\": \"http://snomed.info/sct\",\n                    \"code\": \"4115\",\n                    \"display\": \"Wound : bite\"\n                }\n            ]\n        }\n    ],\n    \"hospitalization\": {\n        \"admitSource\": {\n            \"coding\": [\n                {\n                    \"system\": \"https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1\",\n                    \"code\": \"507291000000100\"\n                }\n            ],\n            \"text\": \"Self / family / friends / education / work colleague\"\n        }\n    },\n    \"location\": [\n        {\n            \"location\": {\n                \"reference\": \"Location/{{location_mungoshospital_id}}\",\n                \"display\": \"St. Mungos General Hospital\"\n            },\n            \"status\": \"active\"\n        },\n        {\n            \"location\": {\n                \"reference\": \"Location/{{location_emergencyadmissionward_id}}\",\n                \"display\": \"Emergency Admissions Ward\"\n            },\n            \"status\": \"active\"\n        },\n        {\n            \"location\": {\n                \"reference\": \"Location/{{location_emergency_bed1_id}}\",\n                \"display\": \"Emergency Admission Bed 1\"\n            },\n            \"status\": \"active\"\n        }\n    ],\n    \"serviceProvider\": {\n        \"reference\": \"Organization/{{organization_mungos_id}}\",\n        \"display\": \"St. Mungos NHS Foundation Trust\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Encounter",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Encounter"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "search-requests",
+			"item": [
+				{
+					"name": "All in progress encounters",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							},
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Encounter?status=in-progress&service-provider=Organization/{{organization_mungos_id}}",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Encounter"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "in-progress"
+								},
+								{
+									"key": "service-provider",
+									"value": "Organization/{{organization_mungos_id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All in progress encounters by ward",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							},
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Encounter?status=in-progress&location=Location/{{location_emergencyadmissionward_id}}",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Encounter"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "in-progress"
+								},
+								{
+									"key": "location",
+									"value": "Location/{{location_emergencyadmissionward_id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get in progress encounter include patient and general practitioner",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/fhir+json",
+								"type": "text"
+							},
+							{
+								"key": "api-key",
+								"value": "{{fhir-appliance-integration-endpoint-api-key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{fhir-appliance-integration-endpoint}}/fhir/stu3/Encounter?_id={{encounter_meleah_id}}&_include=Encounter:patient&_include:recurse=Patient:general-practitioner",
+							"host": [
+								"{{fhir-appliance-integration-endpoint}}"
+							],
+							"path": [
+								"fhir",
+								"stu3",
+								"Encounter"
+							],
+							"query": [
+								{
+									"key": "_id",
+									"value": "{{encounter_meleah_id}}"
+								},
+								{
+									"key": "_include",
+									"value": "Encounter:patient"
+								},
+								{
+									"key": "_include:recurse",
+									"value": "Patient:general-practitioner"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

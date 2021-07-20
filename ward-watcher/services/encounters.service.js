@@ -4,7 +4,7 @@
  * Created Date: Friday July 16th 2021
  * Author: Rob Organ
  * -----
- * Last Modified: Monday July 19th 2021 11:14:41 am
+ * Last Modified: Tuesday July 20th 2021 5:45:25 pm
  * Modified By: Rob Organ
  * -----
  * Copyright (c) 2021 Synanetics Ltd
@@ -16,7 +16,6 @@
 //Helpers
 const { getReference, getPatientAgeInYears, getIdentifier, formatNHSNumberForDisplay } = require("../utils/fhir");
 //Node modules
-const bcrypt = require("bcrypt");
 const moment = require("moment-timezone");
 //Mixins
 const JWTClient = require("./mixins/jwt.client.mixin");

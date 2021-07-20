@@ -1,0 +1,169 @@
+{
+	"id": "ae9c223b-e7f4-4c62-9e68-544c5e4ea4f9",
+	"name": "ward-watcher",
+	"values": [
+		{
+			"key": "fhir-appliance-integration-endpoint",
+			"value": "http://localhost:3880",
+			"enabled": true
+		},
+		{
+			"key": "fhir-appliance-integration-endpoint-api-key",
+			"value": "900a1cae-7b54-43da-9ef9-94087d6c1b81",
+			"enabled": true
+		},
+		{
+			"key": "fhir-appliance-public-endpoint",
+			"value": "https://localhost:3443",
+			"enabled": true
+		},
+		{
+			"key": "organization_mungos_id",
+			"value": "78eef75f-0a88-4dfe-afcb-890e73c47e8b",
+			"enabled": true
+		},
+		{
+			"key": "organization_malton_id",
+			"value": "f5fa3c72-6191-4890-9498-e0b343d9af62",
+			"enabled": true
+		},
+		{
+			"key": "organization_shawlane_id",
+			"value": "d12a5fbe-2775-4d2c-8e60-f8374793df8e",
+			"enabled": true
+		},
+		{
+			"key": "organization_marketcross_id",
+			"value": "dd60f2bf-4a66-4744-b801-5b36eec10d67",
+			"enabled": true
+		},
+		{
+			"key": "location_mungoshospital_id",
+			"value": "68a0e5ea-092f-4f0d-b879-953d657cb102",
+			"enabled": true
+		},
+		{
+			"key": "location_observationward_id",
+			"value": "42fa7dcb-1e8f-41c1-9202-629d6efc4222",
+			"enabled": true
+		},
+		{
+			"key": "location_observationward_bed1_id",
+			"value": "61876087-26d0-433d-988a-fc4d09a80157",
+			"enabled": true
+		},
+		{
+			"key": "location_observationward_bed2_id",
+			"value": "67e5d166-835f-43ae-b485-52126d753e85",
+			"enabled": true
+		},
+		{
+			"key": "location_observationward_bed3_id",
+			"value": "c810f830-23d4-4948-946e-61b1bf39f483",
+			"enabled": true
+		},
+		{
+			"key": "location_emergencyadmissionward_id",
+			"value": "22765450-9b0d-42b8-b7bd-f3324aa4153b",
+			"enabled": true
+		},
+		{
+			"key": "location_emergency_bed1_id",
+			"value": "0dd7c671-fe26-4b83-aaf8-8b7db7a68e7f",
+			"enabled": true
+		},
+		{
+			"key": "location_emergency_bed2_id",
+			"value": "da817951-0db7-4a05-b79e-da0f4e5c5b42",
+			"enabled": true
+		},
+		{
+			"key": "location_generalmedicalward_id",
+			"value": "ca1ba62a-d707-457e-b747-26e4b0197611",
+			"enabled": true
+		},
+		{
+			"key": "location_generalmedical_bed1_id",
+			"value": "f55f0d84-8da4-4b26-a9ae-d4285fd9b0d1",
+			"enabled": true
+		},
+		{
+			"key": "location_generalmedical_bed2_id",
+			"value": "389caea5-51fc-4223-a11a-4fb185e3a0b8",
+			"enabled": true
+		},
+		{
+			"key": "location_surgicalward_id",
+			"value": "748ef36a-276f-4077-94ed-5c6532a49023",
+			"enabled": true
+		},
+		{
+			"key": "location_surgical_bed1_id",
+			"value": "923e8c4e-74c0-4369-ac6a-35bd165847a5",
+			"enabled": true
+		},
+		{
+			"key": "patient_shipperbottom_id",
+			"value": "b1cf868a-cfe0-4c7b-96b0-868f29dcc891",
+			"enabled": true
+		},
+		{
+			"key": "patient_chislett_id",
+			"value": "88da0324-049f-4de2-a177-c07e06e3c575",
+			"enabled": true
+		},
+		{
+			"key": "patient_meleah_id",
+			"value": "7dcd1f52-23b3-410f-aebb-7076bc4b592f",
+			"enabled": true
+		},
+		{
+			"key": "patient_nutton_id",
+			"value": "cb27c18c-b298-4b2a-818b-60d19f055aea",
+			"enabled": true
+		},
+		{
+			"key": "patient_wilton_id",
+			"value": "1f6ddea4-cf85-4b8f-bdca-739d645b532a",
+			"enabled": true
+		},
+		{
+			"key": "encounter_wilton_id",
+			"value": "1f6ddea4-cf85-4b8f-bdca-739d645b532a",
+			"enabled": true
+		},
+		{
+			"key": "encounter_shipperbottom_id",
+			"value": "b9f6159e-5983-43f7-9a1d-e8377d11fb7f",
+			"enabled": true
+		},
+		{
+			"key": "location_mungossurgerycentre_id",
+			"value": "d1f71237-0f39-4196-bb7e-f05610e99eec",
+			"enabled": true
+		},
+		{
+			"key": "encounter_meleah_id",
+			"value": "1ccc8670-0066-43b8-90ad-206241b27966",
+			"enabled": true
+		},
+		{
+			"key": "practitioner_greyjoy_id",
+			"value": "05f14b7e-94aa-4b52-a4d4-d372da335c50",
+			"enabled": true
+		},
+		{
+			"key": "practitioner_lannister_id",
+			"value": "09b405f6-0fd9-4614-9f5d-ec3a9dbb183f",
+			"enabled": true
+		},
+		{
+			"key": "practitioner_stark_id",
+			"value": "5ff485d9-b544-4adf-8db0-0ae7b0ab2dad",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2021-07-20T13:27:01.343Z",
+	"_postman_exported_using": "Postman/8.8.0"
+}
