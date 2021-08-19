@@ -17,7 +17,7 @@ Visit [Yorkshire and Humber Care Record FHIR Appliance](https://github.com/yorks
 
 # Overview
 
-This collection is under development but will use a stack of open source software and health care interoperability standards, namely:
+This collection is under development but will use a stack of open source/licence-free-for-development software and health care interoperability standards, namely:
 
 [Fast Healthcare Interoperable Resources - FHIR](https://fhir.hl7.org.uk)
 Fast Healthcare Interoperability Resources is a standard describing data formats and elements and an application programming interface for exchanging electronic health records. The standard was created by the Health Level Seven International health-care standards organization.
@@ -32,7 +32,7 @@ A Progressive microservices framework for Node.js.
 PostgreSQL, also known as Postgres, is a free and open-source relational database management system emphasizing extensibility and technical standards compliance. It is designed to handle a range of workloads, from single machines to data warehouses or Web services with many concurrent users.
 
 [Microsoft SQL Server](https://www.microsoft.com/en-gb/sql-server)
-Microsoft SQL Server, often called "sequel server", is a commercial product developed and maintained by Microsoft. The FHIR Appliance can work with Express editions.
+Microsoft SQL Server, often called "sequel server", is a commercial product developed and maintained by Microsoft. The FHIR Appliance can work with Express and Developer editions.
 
 [Docker](https://www.docker.com)
 Docker is a set of coupled software-as-a-service and platform-as-a-service products that use operating-system-level virtualization to develop and deliver software in packages called containers.
@@ -54,16 +54,25 @@ Each example application will automatically carry out any necessary configuratio
 
 Although not required, a git client is also helpful. There are many git clients around, including [GitHub Desktop](https://desktop.github.com/)
 
+> Some of the example applications use SQL Server Integration Services. Installation instructions and setup information can be found here:
+[Microsoft SQL Server Integration Serivices](https://docs.microsoft.com/en-us/sql/integration-services/install-windows/install-integration-services?view=sql-server-ver15)
+
 # About the examples
 
-Each of the example applications were intended to aid the development of FHIR based healthcare applications. The applications were created to assist developers who may have had limited exposure to the FHIR standard but tasked with completing development projects for the Yorkshire and Humber Care Record
+Each of the example applications were intended to aid the development of FHIR based healthcare applications. The applications were created to assist developers who may have had limited exposure to the FHIR standard but tasked with completing development projects for the Yorkshire and Humber Care Record/Leicester, Leicestershire and Rutland Care Record.
 
 Each application contains installation, setup and configuration instructions.
 
-> The examples should be run using a local install of Docker Desktop (Linux Containers). Windows containers are not supported.
+> Unless stated, the examples should be run using a local install of Docker Desktop (Linux Containers).
 
 ### Ward Watcher
 
 A simple web based application that uses FHIR resources to display information about current inpatients at a fictional NHS trust (a very basic bed state). Encounter resources are created from HL7v2 ADT messages.
+
+[View the code](https://github.com/synanetics/fhir-appliance-example-applications/tree/master/ward-watcher)
+
+### Social Care Data Provision
+
+Two simple SSIS packages that transform example social care datasets extracted from a Microsoft SQL Server Database into FHIR Patient and EpisodeOfCare resources. The FHIR resources are sent as a batch (Bundle) to a FHIR Appliance where they are persisted.
 
 [View the code](https://github.com/synanetics/fhir-appliance-example-applications/tree/master/ward-watcher)

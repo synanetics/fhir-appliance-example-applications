@@ -1,0 +1,19 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="OLEDB ADULTSOCIALCARE"
+  DTS:DTSID="{F8E4F7FA-1099-49FA-A546-6BAB9B324DBF}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=WIN-S4PLGLVIJ9E;User ID=socialcare;Initial Catalog=ADULTSOCIALCARE;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="laXLfqyQ7jI="
+        p4:IV="qSk5AmZmumkbzE94RK+q+A=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">Dl4UPN17bdv//4l7a7svOFReYXCLpy+yzkx3FlUp3POd4GFUbwSAMgXr6iBbP72RcukvJG1M2qLXNZlIbOji1OZ8APPmHV0ol24qIBPxlJI9nl4WGp5AIwYiZ47nCn4Xl22k7j2Bk/4O8Q3H3t6F3uIHtbnzj4Q93B8AMAv+lwQ=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

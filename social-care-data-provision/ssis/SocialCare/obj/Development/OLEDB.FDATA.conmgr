@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="OLEDB FDATA"
+  DTS:DTSID="{E9CDF80F-EED1-4CA4-9719-F0ED9885C26E}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=WIN-S4PLGLVIJ9E;User ID=fdatauser;Initial Catalog=FDATA;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="DI+h2Sk8n2o="
+        p4:IV="VrllSJZiuUr/DLa6J7xiLA=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">A4n0Cd8ZCci5k6mnwPE3oCg0ZeM2Xt573ZgvpAHpPzWBrscwEVonuHXitQ/jQGYFdufkOADDdwBBC9cG0ZubzQfwiSp1TTI8tYRMCZvB9wW6MfzheSRdjU0AIzdRxYu6g6zToAKhNDG8hv+5PKqmw32FBWFQi4BT3sr1n/P7/34=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

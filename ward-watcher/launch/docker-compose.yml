@@ -19,7 +19,7 @@ services:
 
     # fhir appliance
     fhir-appliance:
-        image: synaneticsltd/synfhir-store:linux-beta-v3.1.1
+        image: synaneticsltd/synfhir-store:linux-latest
         restart: always
         container_name: fhir-appliance
         environment:
@@ -41,7 +41,7 @@ services:
         networks:
             - ward_watcher
 
-    # ward-watcher app        
+    # ward-watcher app
     app-session:
         image: redis:alpine
         container_name: app-session
@@ -89,7 +89,7 @@ services:
             - KEYSTORE_STOREPASS=docker_storepass
             - KEYSTORE_KEYPASS=docker_keypass
             - VMOPTIONS=-Xmx512m
-        volumes: 
+        volumes:
             - ./mirth/extensions:/opt/connect/custom-extensions
             - ./mirth/data/appdata:/opt/connect/appdata
         ports:

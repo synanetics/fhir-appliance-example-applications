@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProjectInfo>
+    <Name>SocialCare</Name>
+    <LastWriteTime>2021-08-17T17:26:49.2955428Z</LastWriteTime>
+    <LastKnownProtectionLevel>EncryptSensitiveWithPassword</LastKnownProtectionLevel>
+    <Salt>vyR2eHT6</Salt>
+    <LastKnownProtectedHashedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA+K6W43mT90aLRqQgXka9rQAAAAACAAAAAAAQZgAAAAEAACAAAABIr2yqiVs7YUz5kc0WkQVNSbwskbmeA9PITyugTB0yiwAAAAAOgAAAAAIAACAAAABGODpMcFw4P9fE92BERcu/dquyLZRZNifKNXOIqATYlDAAAADk1+EctEOMllkHcc1cPLW65uhyRaL26Y/40Y8i+fCJvS6jMlB1ieXp2RNG3CJEe8RAAAAAkw53wKG88F5bsxGRM6xxkoT5Z2rVCHPyr4PAHkHkvh/+FA5n2ivgH0dg2ewqScbKbEvau1Qsrj9VRSmYkXJfAQ==</LastKnownProtectedHashedPassword>
+  </ProjectInfo>
+  <LastBuildInfos>
+    <ProjectBuildItemInfo>
+      <Name>Persons.dtsx</Name>
+      <LastWriteTime>2021-08-17T21:01:15.5600737Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithPassword</LastKnownProtectionLevel>
+      <Salt>5Q7AAlrf</Salt>
+      <LastKnownProtectedHashedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA+K6W43mT90aLRqQgXka9rQAAAAACAAAAAAAQZgAAAAEAACAAAABknMI6qDgJlIh1lvHpD+g8JuANgGkx+BKo4zurZHJLLgAAAAAOgAAAAAIAACAAAACVLGsV+0uvelPUBSaLQ/F1vpht7pQMpBc0vJ10P6nwRDAAAAA/qJS+tAs952GU3ajBQbdlkB1xYL5T/uL1MNo9dGe3+CHSPVDCBS3a8Rb1Tysc/TtAAAAAISJDdpWtcQI6ooZpX90vNx6/s/iYnHdWbCQ0XDRIh/uCbFU2t+QbkCeD5rzRoJdzqiNUSB/daM0/bhhtUddleg==</LastKnownProtectedHashedPassword>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>ServiceProvision.dtsx</Name>
+      <LastWriteTime>2021-08-17T20:39:45.2851965Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithPassword</LastKnownProtectionLevel>
+      <Salt>6L+yVZlg</Salt>
+      <LastKnownProtectedHashedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA+K6W43mT90aLRqQgXka9rQAAAAACAAAAAAAQZgAAAAEAACAAAADfR5nuyFv7+kvX4S01/mY2dXorW5Q14aL9V28XuaSaAgAAAAAOgAAAAAIAACAAAAC281WQOJuZk+5Ih+pSUAkeTMMr5cnZaYjRxSeYlvJ9nTAAAAC9CUBbpYR2TeApnM/7Nv8FlynMaWX1p0y0AtIRwbONqCE6K7hRztcrIxxg9k1kBbNAAAAA9GuI3e04+Pw1fb7r9aK0M7KQrUFPCcfBPtaW1JLjKWu51ixusjAAptRQrXwE2JbB79PyfunR9gUVfChyjiL8OA==</LastKnownProtectedHashedPassword>
+    </ProjectBuildItemInfo>
+  </LastBuildInfos>
+</BuildLog>

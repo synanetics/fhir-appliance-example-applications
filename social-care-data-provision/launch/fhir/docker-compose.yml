@@ -1,0 +1,48 @@
+version: "3.2"
+
+services:
+  # fhir db
+  fhir-appliance-db:
+    build:
+      context: ./fhir/db
+      dockerfile: Dockerfile
+    container_name: fhir-appliance-db
+    hostname: localhost
+    environment:
+      - ACCEPT_EULA="Y"
+      - SA_PASSWORD=DStUVXLWJe3zRFhp
+      - MSSQL_PID=Developer #Other options available: https://hub.docker.com/_/microsoft-mssql-server
+    ports:
+      - 1434:1433
+    networks:
+      - social_care
+
+  # fhir appliance
+  fhir-appliance:
+    image: synaneticsltd/synfhir-store:linux-latest
+    restart: always
+    container_name: fhir-appliance
+    environment:
+      - METRICSENABLE=false
+      - NAMESPACE=fhir-appliance
+      - NODE_ENV=development
+      - SERVICEDIR=services
+      - SERVICES=**/*.service.js
+    env_file:
+      - ./fhir/.env
+    ports:
+      - 3880:80
+      - 3800:8080
+    depends_on:
+      - fhir-appliance-db
+    volumes:
+      - ./fhir/ssl:/app/ssl
+      - ./fhir/jwt:/app/jwt
+    networks:
+      - social_care
+
+networks:
+  social_care:
+
+volumes:
+  data:

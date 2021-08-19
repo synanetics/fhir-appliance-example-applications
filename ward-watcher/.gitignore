@@ -75,3 +75,5 @@ public/
 
 # mirth data
 launch/mirth/data/appdata/
+
+debug.env

@@ -6,6 +6,8 @@ A simple web based application that uses FHIR resources to display information a
 
 [Prerequisites](#prequisites)
 
+[Debug Settings](#debug-settings)
+
 [Run the app](#run-the-app)
 
 [View the code](#view-the-code)
@@ -24,9 +26,49 @@ A simple web based application that uses FHIR resources to display information a
 
 [Java](https://www.java.com/en/download/manual.jsp/) (for the Mirth Connect client - this is optional)
 
+## Debug Settings
+
+It is necessary to create a `debug.env` file if you want to run the app using VS Code debug. To create a debug file:
+
+1. Create a new empty text file called `debug.env` in `launch/app/`
+
+2. Add each of the following settings on a new line
+
+| Setting Key | Setting Value |
+| :----------------- | :--- |
+| TZ            | utc |
+| LOG_LEVEL            | debug |
+| METRICS_ENABLED            | true |
+| TRACING_ENABLED             | false |
+| APP_NAME             | ward_watcher |
+| APP_LAUNCH_FHIR_SERVER_REPO | https://github.com/synanetics/fhir-appliance-example-applications/ward-watcher
+| APP_NHS_ORGANIZATION_ODS_CODE | ZZ1
+| APP_TZ | Europe/London
+| APP_LOG_REQUEST_PARAMS | debug
+| APP_LOG_RESPONSE_DATA | debug
+| APP_UI_GATEWAY_TRANSPORT_PROTOCOL | http
+| APP_UI_GATEWAY_TRANSPORT_PORT | 3000
+| APP_UI_SESSION_COOKIE_SECURE | false
+| APP_DATABASE_DIALECT | mssql
+| APP_DATABASE_PORT | 1434
+| APP_DATABASE_DATABASE_NAME | WARDWATCHER
+| APP_DATABASE_USERNAME | ward_watcher
+| APP_DATABASE_PASSWORD | 5tMunG050nFh1R
+| APP_FHIR_APPLIANCE_HOST | https://localhost
+| APP_FHIR_APPLIANCE_PORT | 3443
+| APP_FHIR_APPLIANCE_PATH | fhir/stu3
+| APP_FHIR_APPLIANCE_AUTH_JWT_SIGNING_KEY | ./launch/app/auth/jwt.signing.key.pem
+| APP_FHIR_APPLIANCE_AUTH_MUTAL_TLS_CLIENT_CERTIFICATE | ./launch/app/auth/fhir.appliance.local.client.cert.pem
+| APP_FHIR_APPLIANCE_AUTH_MUTAL_TLS_CLIENT_CERTIFICATE_KEY | ./launch/app/auth/fhir.appliance.local.client.key.pem
+| APP_FHIR_APPLIANCE_AUTH_MUTAL_TLS_CLIENT_ROOT_CA | ./launch/app/auth/fhir.appliance.root.ca.pem
+
+You can refer to the .env file located under `/ward-watcher` for reference.
+
+> Keys and certificates are self signed and cannot be used outside of the application. Passwords provided are not used outside of the application. You can change passwords as required - passwords provided are for convenience.
+
 ## Run the app
 
-Once you have the prerequisites installed: 
+Once you have the prerequisites installed and have created a [debug.env](#debug-settings) :
 
 1. Download and extract the [FHIR Appliance Example Applications](https://github.com/synanetics/fhir-appliance-example-applications/archive/refs/heads/master.zip) repository to a directory on your local machine.
 
@@ -38,7 +80,7 @@ Once you have the prerequisites installed:
 
 <img src="../docs/media/ward-watcher-started.PNG" style="height:152;width=1549;margin-top:5px;margin-bottom:5px" />
 
-5. Launch the app in your browser using http://localhost:3000/ 
+5. Launch the app in your browser using [http://localhost:3000/](http://localhost:3000/) 
 
 > The application will create a default user during startup and you can login using the following credentials u: `admin` p: `admin`. 
 
@@ -50,7 +92,7 @@ Once you have the prerequisites installed:
 
 The Ward Watcher bundles an integration engine so that is possible to alter the bed state using ADT A01, A02 and A03 messages. To try this out:
 
-1. Launch the Mirth Connect web interface using http://localhost:8080
+1. Launch the Mirth Connect web interface using [http://localhost:8080](http://localhost:8080)
 
 2. On the resultant screen, click the `Download Administrator Installer` and follow the instructions, accepting the defaults and choose to run the administrator at the end of the installation.
 
