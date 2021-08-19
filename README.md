@@ -75,4 +75,4 @@ A simple web based application that uses FHIR resources to display information a
 
 Two simple SSIS packages that transform example social care datasets extracted from a Microsoft SQL Server Database into FHIR Patient and EpisodeOfCare resources. The FHIR resources are sent as a batch (Bundle) to a FHIR Appliance where they are persisted.
 
-[View the code](https://github.com/synanetics/fhir-appliance-example-applications/tree/master/ward-watcher)
+[View the code](https://github.com/synanetics/fhir-appliance-example-applications/tree/master/social-care-data-provision)
