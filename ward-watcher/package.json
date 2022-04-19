@@ -10,7 +10,8 @@
         "clean:frontend": "gulp clean",
         "ww:backend:build": "cd ./launch && docker-compose -p fhir-appliance-examples up --build -d",
         "ww:backend:up": "cd ./launch && docker-compose -p fhir-appliance-examples up -d",
-        "ww:backend:down": "cd ./launch && docker-compose -p fhir-appliance-examples down -v --remove-orphans"
+        "ww:backend:down": "cd ./launch && docker-compose -p fhir-appliance-examples down -v --remove-orphans",
+        "start": "gulp build && moleculer-runner"
     },
     "keywords": [
         "fhir",
